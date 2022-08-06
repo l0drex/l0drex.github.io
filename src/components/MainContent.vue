@@ -3,7 +3,7 @@
     <div id="welcome">
       <h1>Welcome to my Homepage!</h1>
       <p>I'm a computer science student from Dresden, Germany.<br>
-        I love to explore technology, so I have started a lot of cool projects in my freetime.</p>
+        I love to explore technology, so I have started a lot of cool projects in my free time.</p>
       <p>Check them out below!</p>
     </div>
 
@@ -52,8 +52,6 @@
       <ul class="contacts">
         <li><i data-feather="mail" />
           <a href="mailto:hoffmann_lorenz@protonmail.com">hoffmann_lorenz@protonmail.com</a></li>
-        <li><i data-feather="phone" />
-          <a href="tel:+49 1573 2259591">+49 1573 2259591</a></li>
       </ul>
     </article>
   </main>
@@ -97,6 +95,8 @@ article > * {
   list-style: none;
 }
 
+/* elements with data-feather attributes get replaced with SVGs classed as feather */
+/*noinspection CssUnusedSymbol*/
 .contacts .feather {
   margin-right: .5em;
 }

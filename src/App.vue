@@ -10,6 +10,7 @@ import MainContent from "@/components/MainContent";
 import FooterBar from "@/components/FooterBar";
 import feather from "feather-icons";
 
+// noinspection JSUnusedGlobalSymbols
 export default {
   name: 'App',
   components: {
