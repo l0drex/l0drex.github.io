@@ -2,8 +2,9 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#"><img src="../assets/logo.svg" height="25" id="logo"/></a></li>
         <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Photography">Photography</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
     </nav>
@@ -57,5 +58,10 @@ nav li:active {
 
 nav li:active a {
   color: var(--background);
+}
+
+#logo {
+  position: relative;
+  bottom: -5px;
 }
 </style>
