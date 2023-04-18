@@ -28,6 +28,9 @@ export default {
 :root {
   --foreground: black;
   --backgroud: white;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: sans-serif;
 }
 
 body {
@@ -36,9 +39,6 @@ body {
 }
 
 #app {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: sans-serif;
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
