@@ -5,6 +5,9 @@
       <p>I'm a computer science student from Dresden, Germany.<br>
         I love to explore technology, so I have started a lot of cool projects in my free time.</p>
       <p>Check them out below!</p>
+      <a href="#Projects">
+        <i data-feather="chevrons-down"/>
+      </a>
     </div>
 
     <article>
@@ -44,6 +47,26 @@
                   description="Automatic night theme in Intellij IDEs"
                   link="https://github.com/weisJ/auto-dark-mode"
                   :tags="['Kotlin', 'Java']"/>
+        <CardItem title="Adaptive Tab Bar Color"
+                  description="Matches the Firefox theme with the opened website"
+                  link="https://github.com/YS-Wong/Adaptive-Tab-Bar-Color"
+                  :tags="['Javascript']"/>
+      </section>
+    </article>
+
+    <article>
+      <h1 id="Photography"><i data-feather="camera"/> Photography</h1>
+      <p>
+        In my free time, I love hiking and enjoy the landscape nature created.
+        Using this opportunity, I have made some photographs you can use freely from the internet!
+      </p>
+      <section class="card-row">
+        <CardItem title="Unsplash"
+                  description="Checkout my profile on Unsplash!"
+                  link="https://unsplash.com/@lh4tography"/>
+        <CardItem title="500px"
+                  description="I'm also here"
+                  link="https://500px.com/p/LH_4tography" />
       </section>
     </article>
 
