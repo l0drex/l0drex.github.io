@@ -27,7 +27,7 @@ jobs:
           cache: 'pnpm'
       - name: Install and Build
         run: |
-          pnpm ci
+          pnpm i
           pnpm run build --if-present
       - uses: actions/upload-artifact@v3
         with:
