@@ -1,3 +1,25 @@
+<script setup>
+import {Octokit} from "octokit";
+import {ref} from "vue";
+
+const octokit = new Octokit();
+const repos = ref([]);
+
+if (repos.value.length === 0) {
+  octokit.rest.repos.listForUser({ username: 'l0drex' }).then(response => {
+    repos.value = response.data.filter(r => !r.archived);
+  });
+}
+
+function personal(repos) {
+  return repos.filter(r => !r.fork);
+}
+
+function helpedOut(repos) {
+  return repos.filter(r => r.fork);
+}
+</script>
+
 <template>
   <main>
     <div id="welcome">
@@ -16,41 +38,21 @@
         As you can see from my <a href="https://github.com/l0drex?tab=repositories">GitHub repositories</a>,
         I love to try out a lot of languages and frameworks:
       </p>
-      <section class="card-row">
-        <CardItem title="Homepage"
-                  description="The website you currently see."
-                  link="https://github.com/l0drex/l0drex/website"
-                  :tags="['HTML', 'CSS', 'Vue', 'Javascript']"/>
-        <CardItem title="Family Tree"
-                  description="Visualizes genealogy data from GedcomX files."
-                  link="https://github.com/l0drex/family-tree"
-                  :tags="['HTML', 'CSS', 'React', 'Typescript', 'd3']"/>
-        <CardItem title="Wallpaper Splitter"
-                  description="Apply an image as your wallpaper, crossing all your monitors."
-                  link="https://github.com/l0drex/WallpaperSplitter"
-                  :tags="['C++', 'CMAKE', 'Qt', 'KDE']"/>
-        <CardItem title="Intellij Breeze Theme"
-                  description="Brings KDE Plasmas Breeze theme to Intellij IDEs."
-                  link="https://github.com/l0drex/Intellij-KDE-Breeze-Theme"
-                  :tags="['gradle', 'Python', 'XML', 'JSON']"/>
+      <section class="card-row" id="personal-projects">
+        <CardItem v-for="repo in personal(repos)" :key="repo.id" :title="repo.name"
+                  :description="repo.description"
+                  :link="repo.html_url"
+                  :tags="[repo.language]"/>
       </section>
 
       <p>
         I also help with other open source projects:
       </p>
       <section class="card-row">
-        <CardItem title="Yin Yang"
-                  description="Automatic night theme on Linux"
-                  link="https://github.com/oskarsh/Yin-Yang"
-                  :tags="['Python']"/>
-        <CardItem title="auto-dark-mode"
-                  description="Automatic night theme in Intellij IDEs"
-                  link="https://github.com/weisJ/auto-dark-mode"
-                  :tags="['Kotlin', 'Java']"/>
-        <CardItem title="Adaptive Tab Bar Color"
-                  description="Matches the Firefox theme with the opened website"
-                  link="https://github.com/YS-Wong/Adaptive-Tab-Bar-Color"
-                  :tags="['Javascript']"/>
+        <CardItem v-for="repo in helpedOut(repos)" :key="repo.id" :title="repo.name"
+                  :description="repo.description"
+                  :link="repo.html_url"
+                  :tags="[repo.language]"/>
       </section>
     </article>
 
