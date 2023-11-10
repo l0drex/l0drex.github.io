@@ -78,8 +78,11 @@ function helpedOut(repos) {
     <article>
       <h1 id="Contact"><i data-feather="users"></i> Contact</h1>
       <ul class="contacts">
-        <li><i data-feather="mail" />
-          <a href="mailto:hoffmann_lorenz@proton.me">hoffmann_lorenz@protonmail.com</a></li>
+        <li><i data-feather="github" /><a href="https://github.com/l0drex">GitHub</a></li>
+        <li><i data-feather="linkedin" /><a href="https://www.linkedin.com/in/lorenz-hoffmann-316684215">LinkedIn</a></li>
+        <li><i data-feather="message-square"/><a href="https://dresden.network/@l0drex">Mastodon</a></li>
+        <li><i data-feather="mail" /><a href="mailto:hoffmann_lorenz@proton.me">Mail</a></li>
+
       </ul>
     </article>
   </main>
