@@ -64,11 +64,14 @@ function helpedOut(repos) {
       </p>
       <section class="card-row">
         <CardItem title="Unsplash"
-                  description="Checkout my profile on Unsplash!"
+                  description="Checkout my profile on Unsplash and download anything you like for free! Please mention my name, would be greatly appreciated."
                   link="https://unsplash.com/@lh4tography"/>
         <CardItem title="500px"
-                  description="I'm also here"
+                  description="Here you can find more details about camera, lenses and settings I use."
                   link="https://500px.com/p/LH_4tography" />
+        <CardItem title="Pixelfed"
+                  description="You can follow me in the fediverse through Mastodon, Pixelfed or other clients! Most pictures are licensed under CC BY"
+                  link="https://portfolio.pixelfed.social/lh4tography" />
       </section>
     </article>
 
@@ -76,7 +79,7 @@ function helpedOut(repos) {
       <h1 id="Contact"><i data-feather="users"></i> Contact</h1>
       <ul class="contacts">
         <li><i data-feather="mail" />
-          <a href="mailto:hoffmann_lorenz@protonmail.com">hoffmann_lorenz@protonmail.com</a></li>
+          <a href="mailto:hoffmann_lorenz@proton.me">hoffmann_lorenz@protonmail.com</a></li>
       </ul>
     </article>
   </main>
@@ -114,6 +117,7 @@ article > * {
   display: flex;
   overflow-x: scroll;
   gap: 1rem;
+  margin-bottom: 4rem;
 }
 
 .contacts {
