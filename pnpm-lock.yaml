@@ -27,9 +27,6 @@ importers:
       '@babel/eslint-parser':
         specifier: ^7.23.3
         version: 7.23.3(@babel/core@7.23.3)(eslint@7.32.0)
-      '@babel/plugin-transform-class-static-block':
-        specifier: ^7.23.3
-        version: 7.23.3(@babel/core@7.23.3)
       '@vue/cli-plugin-babel':
         specifier: ~5.0.8
         version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.33.2)(vue@3.3.8)
