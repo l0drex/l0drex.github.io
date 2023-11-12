@@ -4,42 +4,50 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  core-js:
-    specifier: ^3.33.2
-    version: 3.33.2
-  feather-icons:
-    specifier: ^4.29.1
-    version: 4.29.1
-  octokit:
-    specifier: ^3.1.1
-    version: 3.1.1
-  vue:
-    specifier: ^3.3.8
-    version: 3.3.8
+importers:
 
-devDependencies:
-  '@babel/core':
-    specifier: ^7.23.3
-    version: 7.23.3
-  '@babel/eslint-parser':
-    specifier: ^7.23.3
-    version: 7.23.3(@babel/core@7.23.3)(eslint@8.53.0)
-  '@vue/cli-plugin-babel':
-    specifier: ~5.0.8
-    version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.33.2)(vue@3.3.8)
-  '@vue/cli-plugin-eslint':
-    specifier: ~5.0.8
-    version: 5.0.8(@vue/cli-service@5.0.8)(eslint@8.53.0)
-  '@vue/cli-service':
-    specifier: ~5.0.8
-    version: 5.0.8(vue@3.3.8)
-  eslint:
-    specifier: ^8.53.0
-    version: 8.53.0
-  eslint-plugin-vue:
-    specifier: ^9.18.1
-    version: 9.18.1(eslint@8.53.0)
+  .:
+    dependencies:
+      core-js:
+        specifier: ^3.33.2
+        version: 3.33.2
+      feather-icons:
+        specifier: ^4.29.1
+        version: 4.29.1
+      octokit:
+        specifier: ^3.1.1
+        version: 3.1.1
+      vue:
+        specifier: ^3.3.8
+        version: 3.3.8
+    devDependencies:
+      '@babel/core':
+        specifier: ^7.23.3
+        version: 7.23.3
+      '@babel/eslint-parser':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.3)(eslint@8.53.0)
+      '@babel/plugin-transform-class-static-block':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.3)
+      '@babel/plugin-transform-private-methods':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.3)
+      '@vue/cli-plugin-babel':
+        specifier: ~5.0.8
+        version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.33.2)(vue@3.3.8)
+      '@vue/cli-plugin-eslint':
+        specifier: ~5.0.8
+        version: 5.0.8(@vue/cli-service@5.0.8)(eslint@8.53.0)
+      '@vue/cli-service':
+        specifier: ~5.0.8
+        version: 5.0.8(vue@3.3.8)
+      eslint:
+        specifier: ^8.53.0
+        version: 8.53.0
+      eslint-plugin-vue:
+        specifier: ^9.18.1
+        version: 9.18.1(eslint@8.53.0)
 
 packages:
 
