@@ -1,24 +1,5 @@
-# l0drex
+# l0drex personal website
 
-## Project setup
-```
-yarn install
-```
+This is the personal webpage of l0drex.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Source for Githubs language colors](https://github.com/ozh/github-colors)
