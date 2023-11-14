@@ -1,0 +1,80 @@
+---
+import * as colors from "../languageColors.json"
+
+interface Props {
+	title: string;
+	description: string;
+	lang: string;
+	href: string;
+}
+
+const { href, title, description, lang, fork } = Astro.props;
+
+let color = colors[lang]?.color ?? "black";
+// quick fix
+if (lang === "C++") {
+	color = "#f34b7d";
+}
+
+---
+
+<li class="project">
+	<a href={href}>
+		<h2>
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p>
+			{description}
+		</p>
+		<div class="tags">
+			<span class="fork">{fork && "forked"}</span>
+			<span class="lang">{lang}</span>
+		</div>
+	</a>
+</li>
+
+<style define:vars={{ color }}>
+	.project {
+		color: var(--color);
+	}
+
+	.project a {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	h2 {
+		font-weight: 800;
+		margin: 0;
+	}
+
+	p {
+		background: var(--color);
+		color: white;
+		padding: 1rem;
+		margin: 0;
+		font-family: monospace;
+
+		flex-grow: 1;
+	}
+
+	span {
+		margin: 0;
+	}
+
+	a {
+		color: unset;
+		text-decoration: unset;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	.tags {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

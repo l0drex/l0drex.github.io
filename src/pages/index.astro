@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="/home/" color="#A6B2E5">
+	<main>
+		<h1 id="title">Welcome to my Homepage!</h1>
+		<nav>
+			<a href="/projects">Projects</a>
+			<a href="https://portfolio.pixelfed.social/lh4tography">Photography</a>
+			<a href="/contact">Contact</a>
+		</nav>
+	</main>
+</Layout>
+
+<style>
+body {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("https://images.unsplash.com/photo-1681823574555-9ada64d8ce06?w=3840");
+	background-size: cover;
+}
+
+main {
+	position: relative;
+	top: 30vh;
+}
+
+h1#title {
+	text-align: center;
+	margin: 0 3rem 4rem;
+	font-weight: 800;
+	font-size: 5rem;
+	color: white;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	gap: 4em;
+	justify-content: center;
+}
+
+a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+	:root {
+		font-size: small;
+	}
+
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+</style>
