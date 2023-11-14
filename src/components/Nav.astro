@@ -1,0 +1,36 @@
+---
+import {HomeIcon, PackageIcon, MailIcon} from "astro-feather"
+
+interface Props {
+  direction: "row" | "column"
+}
+
+const direction = Astro.props.direction ?? "row";
+
+---
+
+<nav>
+    <a href="/"><HomeIcon /></a>
+    <a href="projects"><PackageIcon /></a>
+    <a href="contact"><MailIcon /></a>
+</nav>
+
+<style define:vars={{direction: direction}}>
+nav {
+    display: flex;
+    flex-direction: var(--direction);
+    gap: 1rem;
+    margin: 1rem;
+    float: left;
+    position: fixed;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
