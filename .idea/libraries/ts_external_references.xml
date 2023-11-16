@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="ts-external-references" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+babel__core@7.20.4/node_modules/@types/babel__core/index.d.ts" />
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+hast@2.3.8/node_modules/@types/hast/index.d.ts" />
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+mdast@3.0.15/node_modules/@types/mdast/index.d.ts" />
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+node@20.9.0/node_modules/@types/node/index.d.ts" />
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+unist@2.0.10/node_modules/@types/unist/index.d.ts" />
+        <item url="file://$PROJECT_DIR$/node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/typescript.d.ts" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+babel__core@7.20.4/node_modules/@types/babel__core/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+hast@2.3.8/node_modules/@types/hast/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+mdast@3.0.15/node_modules/@types/mdast/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+node@20.9.0/node_modules/@types/node/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/@types+unist@2.0.10/node_modules/@types/unist/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/typescript.d.ts" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

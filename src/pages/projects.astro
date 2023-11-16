@@ -1,20 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
-import {Octokit} from "octokit";
 import Nav from "../components/Nav.astro";
-import repoCache from "../repos.json";
+import { getCollection, getEntries } from "astro:content";
 
-const debug = false;
-const repos = await (async () => {
-  if (debug)
-    return repoCache;
-
-  const octokit = new Octokit();
-  const repos = await octokit.rest.repos.listForUser({username: 'l0drex'}).then(response => {
-    return response.data.filter(r => !r.archived)
-  });
-})()
+const repos = (await getCollection('projects').then(c => getEntries(c)))
+  .map(r => r.data);
 
 ---
 

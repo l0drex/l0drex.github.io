@@ -2,9 +2,10 @@
 interface Props {
 	title: string;
 	color: string;
-	darkColor: string;
+	darkColor?: string;
 }
 
+Astro.props.darkColor ??= Astro.props.color;
 const { title, color, darkColor } = Astro.props;
 ---
 

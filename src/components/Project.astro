@@ -1,19 +1,24 @@
 ---
-import * as colors from "../languageColors.json"
+import colors from "../languageColors.json"
 
 interface Props {
 	title: string;
-	description: string;
-	lang: string;
+	description?: string;
+	lang?: string;
 	href: string;
+	fork: boolean;
 }
 
 const { href, title, description, lang, fork } = Astro.props;
 
-let color = colors[lang]?.color ?? "black";
+let color: string = "black";
+if (lang != null && lang in colors) {
+	color = colors[lang as keyof typeof colors]?.color ?? "black";
+}
+
 // quick fix
 if (lang === "C++") {
-	color = "#f34b7d";
+	color = colors["C++"].color;
 }
 
 ---
