@@ -6,5 +6,5 @@ const repos = await octokit.rest.repos.listForUser({username: 'l0drex'}).then(re
 });
 
 repos.forEach(r => {
-
+  console.log(r)
 })
