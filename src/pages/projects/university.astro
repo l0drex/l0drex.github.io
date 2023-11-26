@@ -1,0 +1,143 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import ProjectDetailed from "../../components/ProjectDetailed.astro";
+import { Image } from "astro:assets";
+import robbe from "../../img/robb-e.png";
+import robbe2 from "../../img/robb-e-2.png";
+import robolabPlanet from "../../img/robolab-planet.jpg";
+import robolabRobot from "../../img/robolab-robot.jpg";
+
+---
+
+<Layout title="/projects/university" color="white">
+    <Nav direction="row" />
+    <main>
+        <h1>University</h1>
+        <div class="description">
+            <p>
+                During my study of media computer science at TU Dresden in Germany,
+                I acquired a lot of knowledge not only around computers and design.
+                I also learned how to work in team projects, start working on existing projects and
+                how to tackle interesting problems, be it technical or conceptual.
+            </p>
+            <svg height="106" width="106">
+                <rect
+                        style="fill:#fe0000;"
+                        width="65"
+                        height="66"
+                        x="19"
+                        y="27" />
+                <rect
+                        style="fill:none;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-opacity:1"
+                        width="100"
+                        height="100"
+                        x="2"
+                        y="2" />
+            </svg>
+        </div>
+        <ProjectDetailed title="Hybrid Spaces" color="#9F64A6" tools={["Unity", "Rider", "Django", "ViewR"]} languages={["C#", "Python"]}>
+            <p>
+                Hybrid Spaces was an Augmented Reality exhibition in an abandoned cantine.
+                With a team of eight people with backgrounds in computer science, architecture and design,
+                we built a multisensory parkour that challenged the perception of reality.
+            </p>
+            <Image src="https://tu-dresden.de/ing/informatik/smt/im/ressourcen/bilder/projects/hybrid-spaces/portal-colour-80b.jpg/@@images/40510937-f757-4f67-9ac9-f5646b846a5b.jpeg"
+                   alt="Our team balancing a giant balloon pillow on the head of our 3D designer"
+                   width="630" height="674" />
+            <Image src="https://tu-dresden.de/ing/informatik/smt/im/ressourcen/bilder/projects/hybrid-spaces/HybridSpaces-4d.jpg/@@images/4dda4337-5b4b-48e7-9f7e-b08986de8d4c.jpeg"
+                   alt="People walk through giant concrete structures spiralling around the room in an abandoned building"
+                   width="640" height="433" />
+            <p>
+                Personally, I had to two major tasks in this project.
+                First, I had to build a system that would allow users to transition between different Unity scenes
+                without breaking the illusion of Augmented Reality.
+                The second task was to build the backend for a booking system for tickets to the exhibition.
+            </p>
+        </ProjectDetailed>
+
+        <ProjectDetailed title="robb-e" color="#6BA5F2" tools={["GDevelop"]}>
+            <p>
+                Robb-e is a robot seal that teaches students the concept of machine learning.
+                It teaches students how a computer would learn to differentiate different pictures of cats,
+                along with the difficulties this algorithm would have.
+            </p>
+            <Image src={robbe} alt="An image of the home menu of our game. Robb-e sits on an ice shell smiling to the user."
+                   width="500"/>
+            <Image src={robbe2} alt="An example level of robb-e. It asks the player to select the set of cat picures that the machine would recognize."/>
+            <p>
+                Players are asked questions that they answer by clicking on a button.
+                Its designed to be used on an interactive media table.
+            </p>
+        </ProjectDetailed>
+
+        <ProjectDetailed title="RoboLab" color="#A1CD1A" languages={["Python"]}>
+            <p>
+                In the second semester, we built a maze-solving lego robot.
+                It followed black lines on a paper sheet on the ground with intersection points in a grid.
+                The task was to build and program the whole robot from scratch.
+                During debugging, we were able to check our calculated position in the maze
+                with a server on the network.
+            </p>
+            <Image src={robolabPlanet} alt="An example of the mazes. A grid of lines and intersection points with markers for connection possibilities and obstacles." />
+            <Image src={robolabRobot} alt="Our amazing mindstorm robot solving one of the mazes. Its a dragon with moving wings and red glowing eyes to detect obstacles." />
+            <p>
+                My task was to develop the maze-solving algorithm using Dijkstras Algorithm
+                as well as establishing and managing the connection and communication to the server.
+            </p>
+        </ProjectDetailed>
+    </main>
+</Layout>
+
+<style>
+h1 {
+    font-size: 6rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 3rem 0 0;
+}
+
+main {
+    padding-top: 2rem;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.description > * {
+    max-width: 33%;
+    margin: 1rem;
+}
+
+.description p {
+    min-width: 300px;
+}
+
+svg {
+    margin-top: 1rem;
+}
+
+.projects {
+    display: grid;
+    grid: auto-flow dense / 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+
+}
+</style>

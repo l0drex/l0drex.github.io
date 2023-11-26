@@ -3,25 +3,26 @@ import {HomeIcon, PackageIcon} from "astro-feather"
 
 interface Props {
   direction: "row" | "column";
+  color?: string;
+  darkColor?: string;
 }
 
-const direction = Astro.props.direction ?? "row";
+const {direction = "row", color = "black", darkColor = Astro.props.color ?? "black"} = Astro.props;
 
 ---
 
-<nav>
+<nav id="navbar">
     <a href="/"><HomeIcon /></a>
     <a href="/projects"><PackageIcon /></a>
 </nav>
 
-<style define:vars={{direction: direction}}>
+<style define:vars={{direction: direction, color: color, darkColor: darkColor}}>
 nav {
     display: flex;
     flex-direction: var(--direction);
     gap: 1rem;
     margin: 1rem;
     float: left;
-    position: fixed;
 }
 
 a {
@@ -31,5 +32,18 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+</style>
+
+<style is:global>
+#navbar svg {
+    stroke: var(--color) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    #navbar svg {
+        stroke: var(--darkColor) !important;
+    }
 }
 </style>
