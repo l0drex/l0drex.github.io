@@ -5,8 +5,7 @@ interface Props {
 	darkColor?: string;
 }
 
-Astro.props.darkColor ??= Astro.props.color;
-const { title, color, darkColor } = Astro.props;
+const { title, color, darkColor = color } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +17,7 @@ const { title, color, darkColor } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content={color} media="(prefers-color-scheme: light)"/>
-		<meta name="theme-color" content={darkColor ?? color} media="(prefers-color-scheme: dark)"/>
+		<meta name="theme-color" content={darkColor} media="(prefers-color-scheme: dark)"/>
 		<title>{title}</title>
 	</head>
 	<body>
@@ -52,8 +51,17 @@ const { title, color, darkColor } = Astro.props;
 	body {
 		margin: 0;
 	}
+
 	code {
 		font-family:
 			monospace;
+	}
+
+	img {
+		object-fit: contain;
+		max-width: min-content;
+		max-height: min-content;
+		width: 100%;
+		height: fit-content;
 	}
 </style>

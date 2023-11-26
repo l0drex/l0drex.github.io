@@ -3,9 +3,11 @@ import {HomeIcon, PackageIcon} from "astro-feather"
 
 interface Props {
   direction: "row" | "column";
+  color: string;
+  darkColor: string;
 }
 
-const direction = Astro.props.direction ?? "row";
+const {direction = "row", color = "black", darkColor = color} = Astro.props;
 
 ---
 

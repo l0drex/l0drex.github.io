@@ -1,0 +1,61 @@
+---
+import Nav from "../../components/Nav.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout color="white" darkColor="black">
+    <main>
+        <Nav direction="column" darkColor="white"/>
+
+        <h1>
+            My projects
+        </h1>
+        <nav>
+            <ol>
+                <li><a href="/projects/personal">Personal</a>
+                    <p>
+                        Includes all projects I started in my free time as a hobby.
+                        Sometimes, this happens out of necessity as I am missing a tool or some functionality.
+                        Other times, I want to try out new technology or tools I have learned about.
+                        If everything goes well, these projects are pretty useful and great to have.
+                        But it also happens that I loose interest or run out of time.
+                    </p>
+                </li>
+                <li><a href="/projects/university">University</a>
+                    <p>
+                        These projects are part of my study or my work as a SHK (student assistant).
+                        Very often, these are team projects I worked on together with other students.
+                    </p>
+                </li>
+            </ol>
+        </nav>
+    </main>
+</Layout>
+
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 900;
+    }
+    nav {
+        font-family: monospace;
+        font-size: 1.25rem;
+        margin: 0 auto;
+        max-width: 50%;
+        min-width: 400px;
+    }
+
+    a {
+        color: inherit;
+        font-weight: bold;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            color: white;
+            background: black;
+        }
+    }
+</style>

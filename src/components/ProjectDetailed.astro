@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string
+  color: string
+  languages?: string[]
+  tools?: string[]
+}
+
+const {title, color, languages, tools } = Astro.props;
+---
+
+<article>
+    <h1>{title}</h1>
+    <div class="content">
+        <slot />
+    </div>
+    <div class="meta">
+        {tools && <span>Tools: {tools.join(", ")}</span>}
+        {languages && <span>Languages: {languages.join(", ")}</span>}
+    </div>
+</article>
+
+<style define:vars={{ color: color }}>
+article {
+    background: var(--color);
+    padding: 2rem;
+}
+
+.content {
+    columns: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.meta {
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.meta span:not(:last-child) {
+    margin-right: 1rem;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .content {
+        columns: 1;
+    }
+}
+</style>
