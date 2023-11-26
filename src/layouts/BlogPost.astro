@@ -3,11 +3,12 @@ import Layout from "./Layout.astro";
 import Nav from "../components/Nav.astro";
 import { getCollection } from "astro:content";
 import {ChevronRightIcon} from "astro-feather";
+import type {CollectionEntry} from "astro:content";
 
 const { frontmatter } = Astro.props;
 const darkColor = "#091521";
 
-let posts = [];
+let posts: CollectionEntry<"blog">[] = [];
 if (frontmatter.index) {
     posts = await getCollection('blog');
 }
