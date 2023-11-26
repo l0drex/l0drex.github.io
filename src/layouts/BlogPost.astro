@@ -1,0 +1,120 @@
+---
+import Layout from "./Layout.astro";
+import Nav from "../components/Nav.astro";
+import { getCollection } from "astro:content";
+import {ChevronRightIcon} from "astro-feather";
+
+const { frontmatter } = Astro.props;
+const darkColor = "#091521";
+
+let posts = [];
+if (frontmatter.index) {
+    posts = await getCollection('blog');
+}
+
+---
+
+<Layout title={frontmatter.title} color="lightblue" darkColor={darkColor}>
+    <Nav darkColor="white" direction="column"/>
+
+    <main>
+        <article>
+            <div class="header">
+                <h1>{frontmatter.title}</h1>
+                {frontmatter.date && <span>{frontmatter.date.toLocaleDateString()}</span>
+                    <span>, Lorenz Hoffmann</span>}
+            </div>
+            <slot/>
+        </article>
+        {frontmatter.index && <ul id="blogs">
+            {posts.map(p => <li><a href={`/blog/${p.slug}`}>
+                <div class="header">
+                    <h1>{p.data.title}</h1>
+                    <span>{p.data.date}</span>
+                </div>
+                <span class="linkIcon">
+                     <ChevronRightIcon/>
+                </span>
+            </a></li>)}
+        </ul>}
+    </main>
+</Layout>
+
+<style>
+main {
+    padding-top: 2rem;
+    width: 100%;
+}
+
+#blogs {
+    padding: 0;
+}
+
+#blogs li {
+    list-style: none;
+}
+
+#blogs a {
+    text-decoration: none;
+    flex-grow: 1;
+    display: flex;
+    align-items: baseline;
+}
+
+#blogs a div {
+    flex-grow: 1;
+}
+
+#blogs a:not(:hover) .linkIcon {
+    display: none;
+}
+
+article, #blogs li {
+    margin: 0 auto 3rem;
+    max-width: 66%;
+    background: white;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+}
+
+#blogs li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+article h1, #blogs h1 {
+    font-size: 3rem;
+    margin-bottom: .25rem;
+    margin-top: 0;
+}
+
+.header :not(h1) {
+    color: grey;
+}
+
+.header:not(:nth-last-child(2)) {
+    margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    article, #blogs li {
+        color: white;
+        background: rgba(255, 255, 255, 0.13);
+    }
+}
+
+@media (width < 500px) {
+    article h1, #blogs li h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<style is:global>
+pre {
+    padding: .5rem 1rem;
+}
+
+a {
+    color: inherit;
+}
+</style>

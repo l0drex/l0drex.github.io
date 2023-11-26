@@ -1,5 +1,5 @@
 ---
-import {HomeIcon, PackageIcon} from "astro-feather"
+import {HomeIcon, PackageIcon, FileIcon} from "astro-feather"
 
 interface Props {
   direction: "row" | "column";
@@ -14,6 +14,7 @@ const {direction = "row", color = "black", darkColor = Astro.props.color ?? "bla
 <nav id="navbar">
     <a href="/"><HomeIcon /></a>
     <a href="/projects"><PackageIcon /></a>
+    <a href="/blog"><FileIcon/></a>
 </nav>
 
 <style define:vars={{direction: direction, color: color, darkColor: darkColor}}>

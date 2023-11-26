@@ -5,7 +5,7 @@ interface Props {
 	darkColor?: string;
 }
 
-const { title, color, darkColor = color } = Astro.props;
+const { title, color, darkColor = Astro.props.color } = Astro.props;
 ---
 
 <!doctype html>
@@ -44,7 +44,7 @@ const { title, color, darkColor = color } = Astro.props;
 
 	@media (prefers-color-scheme: dark) {
 		html {
-			background: var(--darkColor ?? --color);
+			background: var(--darkColor);
 		}
 	}
 

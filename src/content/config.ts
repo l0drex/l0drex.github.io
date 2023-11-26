@@ -11,6 +11,15 @@ const projectCollection = defineCollection({
   })
 });
 
+const blogCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.date()
+  })
+})
+
 export const collections = {
-  'projects': projectCollection
+  'projects': projectCollection,
+  'blog': blogCollection
 }
