@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Nav from "../../components/Nav.astro";
-import { getCollection, getEntries } from "astro:content";
 import ProjectDetailed from "../../components/ProjectDetailed.astro";
 import { Image } from "astro:assets";
 import robbe from "../../img/robb-e.png";
@@ -9,12 +8,9 @@ import robbe2 from "../../img/robb-e-2.png";
 import robolabPlanet from "../../img/robolab-planet.jpg";
 import robolabRobot from "../../img/robolab-robot.jpg";
 
-const repos = (await getCollection('projects').then(c => getEntries(c)))
-  .map(r => r.data);
-
 ---
 
-<Layout title="/projects" color="white">
+<Layout title="/projects/university" color="white">
     <Nav direction="row" />
     <main>
         <h1>University</h1>
