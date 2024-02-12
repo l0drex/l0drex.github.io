@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.3.1
     version: 0.3.1(typescript@5.3.3)
   '@astrojs/ts-plugin':
-    specifier: ^1.3.1
-    version: 1.3.1
+    specifier: ^1.4.0
+    version: 1.4.0
   '@octokit/types':
     specifier: ^12.4.0
     version: 12.4.0
@@ -63,6 +63,10 @@ packages:
 
   /@astrojs/compiler@2.3.4:
     resolution: {integrity: sha512-33/YtWoBCE0cBUNy1kh78FCDXBoBANX87ShgATlAHECYbG2+buNTAgq4Xgz4t5NgnEHPN21GIBC2Mvvwisoutw==}
+    dev: false
+
+  /@astrojs/compiler@2.5.2:
+    resolution: {integrity: sha512-fm9HNYu1tVnJjZYHE+SdDM5k6fZKNPXS9PwT43Mf6l4HVGx8d1jQwhGQqCvLkYJJBwQ9OysiexFMt7wtNuXhmQ==}
     dev: false
 
   /@astrojs/internal-helpers@0.2.1:
@@ -146,10 +150,10 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/ts-plugin@1.3.1:
-    resolution: {integrity: sha512-Q6d7XzDS8L77U38vrnl4Uwp2IkrcRn7eb/VIGDgRVwzWcV8vJsg8nSf7Av7fQOgYQ09ezZODYQKGNx9uK9KCgw==}
+  /@astrojs/ts-plugin@1.4.0:
+    resolution: {integrity: sha512-QfqzM7S8MVlM0jQS1iUS2q6zB00MaGILR0Yc2OjvnveS01+vl62MQqs87unNAXpG1walcIWLc0mTCsfd3GCzMg==}
     dependencies:
-      '@astrojs/compiler': 2.3.0
+      '@astrojs/compiler': 2.5.2
       '@jridgewell/sourcemap-codec': 1.4.15
       '@volar/language-core': 1.10.10
       '@volar/typescript': 1.10.10
