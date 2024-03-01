@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.5.3
     version: 0.5.3(typescript@5.3.3)
   '@astrojs/ts-plugin':
-    specifier: ^1.5.1
-    version: 1.5.1
+    specifier: ^1.5.3
+    version: 1.5.3
   '@octokit/types':
     specifier: ^12.4.0
     version: 12.4.0
@@ -140,13 +140,13 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/ts-plugin@1.5.1:
-    resolution: {integrity: sha512-GN2a65Vsn4Zk+tbsTSfek3k2wGU2ZKvkNErSegFPA/rpKeYBsCYxSNpOtc8CeU7ToDZUSxRWT8BQ4OJKOMTC7g==}
+  /@astrojs/ts-plugin@1.5.3:
+    resolution: {integrity: sha512-exMHUWAa+JxJ1GaOw6TrC/znZMSwuFMaZrtGxjqfdsMnBAVR4WzJbs9560JNAJCxG7HMqpIfVcjqHdQe2oJ9LA==}
     dependencies:
       '@astrojs/compiler': 2.5.3
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/language-core': 2.0.3
-      '@volar/typescript': 2.0.3
+      '@volar/language-core': 2.0.4
+      '@volar/typescript': 2.0.4
       semver: 7.6.0
       vscode-languageserver-textdocument: 1.0.11
     dev: false
@@ -1300,6 +1300,12 @@ packages:
       '@volar/source-map': 2.0.3
     dev: false
 
+  /@volar/language-core@2.0.4:
+    resolution: {integrity: sha512-VhC8i03P0x9LKGLTBi81xNTNWm40yxQ/Iba8IpH+LFr+Yb7c/D7fF90Cvf31MzPDM4G5rjIOlCfs+eQKPBkwQw==}
+    dependencies:
+      '@volar/source-map': 2.0.4
+    dev: false
+
   /@volar/language-server@2.0.3:
     resolution: {integrity: sha512-6nnCzvroLgEdOxHwbrmLFKf+hOIeQqkE1cDswqPNloXoJEcGAvLPG5k7Ghkv0gZjpX9TBgQV1b5kE5JG5U6bfg==}
     dependencies:
@@ -1338,10 +1344,23 @@ packages:
       muggle-string: 0.4.1
     dev: false
 
+  /@volar/source-map@2.0.4:
+    resolution: {integrity: sha512-BbxUinEMoJZqrHsSj1aBa0boCBnN3BoXnf7j9IBwjxosxGXOhCvqmH2L9raJemadaKjeVR8ZQLhV7AOhyoHt/Q==}
+    dependencies:
+      muggle-string: 0.4.1
+    dev: false
+
   /@volar/typescript@2.0.3:
     resolution: {integrity: sha512-EQ+s7sDb1s3arGAUHpbPY4h3zm4/tOTPLr+srwxJZ8W2xYHwKGt/7JeUiG10nbYibF/YJn/JinDKLHkUKIMoHg==}
     dependencies:
       '@volar/language-core': 2.0.3
+      path-browserify: 1.0.1
+    dev: false
+
+  /@volar/typescript@2.0.4:
+    resolution: {integrity: sha512-KF7yh7GIo4iWuAQOKf/ONeFHdQA+wFriitW8LtGZB4iOOT6MdlRlYNsRL8do7XxmXvsBKcs4jTMtGn+uZRwlWg==}
+    dependencies:
+      '@volar/language-core': 2.0.4
       path-browserify: 1.0.1
     dev: false
 
