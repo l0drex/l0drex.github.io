@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/ts-plugin": "^1.6.1",
-    "@octokit/types": "^12.6.0",
+    "@octokit/types": "^13.5.0",
     "astro": "^4.7.0",
     "astro-feather": "^1.0.0",
     "octokit": "^3.1.2",
