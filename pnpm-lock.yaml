@@ -21,8 +21,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   octokit:
-    specifier: ^3.1.2
-    version: 3.1.2
+    specifier: ^3.2.0
+    version: 3.2.0
   sharp:
     specifier: ^0.33.3
     version: 0.33.3
@@ -3051,8 +3051,8 @@ packages:
       path-key: 4.0.0
     dev: false
 
-  /octokit@3.1.2:
-    resolution: {integrity: sha512-MG5qmrTL5y8KYwFgE1A4JWmgfQBaIETE/lOlfwNYx1QOtCQHGVxkRJmdUJltFc1HVn73d61TlMhMyNTOtMl+ng==}
+  /octokit@3.2.0:
+    resolution: {integrity: sha512-f25eJ/8ITwF2BdwymOjK9I5ll9Azt8UbfHE2u5ho0gVdgfpIZkUgMGbQjbvgOYGbtIAYxh7ghH3BUbZrYal1Gw==}
     engines: {node: '>= 18'}
     dependencies:
       '@octokit/app': 14.0.2
