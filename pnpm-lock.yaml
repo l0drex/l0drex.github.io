@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.7.0
     version: 0.7.0(typescript@5.4.5)
   '@astrojs/ts-plugin':
-    specifier: ^1.6.1
-    version: 1.6.1
+    specifier: ^1.8.0
+    version: 1.8.0
   '@octokit/types':
     specifier: ^13.5.0
     version: 13.5.0
@@ -55,10 +55,6 @@ packages:
     transitivePeerDependencies:
       - prettier
       - prettier-plugin-astro
-    dev: false
-
-  /@astrojs/compiler@2.7.0:
-    resolution: {integrity: sha512-XpC8MAaWjD1ff6/IfkRq/5k1EFj6zhCNqXRd5J43SVJEBj/Bsmizkm8N0xOYscGcDFQkRgEw6/eKnI5x/1l6aA==}
     dev: false
 
   /@astrojs/compiler@2.7.1:
@@ -152,14 +148,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/ts-plugin@1.6.1:
-    resolution: {integrity: sha512-13mkBo5K3J/mUN/pt/4qxbwBJSmm/X2HAzOZaYg2AildnN/JxiZ2rm60LMssUXhHHhrxQoKslCh06l9sHSkCMQ==}
+  /@astrojs/ts-plugin@1.8.0:
+    resolution: {integrity: sha512-SXbMemCjA66eHXLon2uDGkLAdbIRS+EzSBKPqBuOcQ4XzU/o+oTTp12cXBIQTOtP/zsnuJPYA6gc36Ylic196g==}
     dependencies:
-      '@astrojs/compiler': 2.7.0
+      '@astrojs/compiler': 2.8.0
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/language-core': 2.1.6
-      '@volar/typescript': 2.1.6
-      semver: 7.6.0
+      '@volar/language-core': 2.2.5
+      '@volar/typescript': 2.2.5
+      semver: 7.6.2
       vscode-languageserver-textdocument: 1.0.11
     dev: false
 
@@ -1553,12 +1549,6 @@ packages:
       vscode-uri: 3.0.8
     dev: false
 
-  /@volar/language-core@2.1.6:
-    resolution: {integrity: sha512-pAlMCGX/HatBSiDFMdMyqUshkbwWbLxpN/RL7HCQDOo2gYBE+uS+nanosLc1qR6pTQ/U8q00xt8bdrrAFPSC0A==}
-    dependencies:
-      '@volar/source-map': 2.1.6
-    dev: false
-
   /@volar/language-core@2.2.5:
     resolution: {integrity: sha512-2htyAuxRrAgETmFeUhT4XLELk3LiEcqoW/B8YUXMF6BrGWLMwIR09MFaZYvrA2UhbdAeSyeQ726HaWSWkexUcQ==}
     dependencies:
@@ -1597,23 +1587,10 @@ packages:
       vscode-languageserver-textdocument: 1.0.11
     dev: false
 
-  /@volar/source-map@2.1.6:
-    resolution: {integrity: sha512-TeyH8pHHonRCHYI91J7fWUoxi0zWV8whZTVRlsWHSYfjm58Blalkf9LrZ+pj6OiverPTmrHRkBsG17ScQyWECw==}
-    dependencies:
-      muggle-string: 0.4.1
-    dev: false
-
   /@volar/source-map@2.2.5:
     resolution: {integrity: sha512-wrOEIiZNf4E+PWB0AxyM4tfhkfldPsb3bxg8N6FHrxJH2ohar7aGu48e98bp3pR9HUA7P/pR9VrLmkTrgCCnWQ==}
     dependencies:
       muggle-string: 0.4.1
-    dev: false
-
-  /@volar/typescript@2.1.6:
-    resolution: {integrity: sha512-JgPGhORHqXuyC3r6skPmPHIZj4LoMmGlYErFTuPNBq9Nhc9VTv7ctHY7A3jMN3ngKEfRrfnUcwXHztvdSQqNfw==}
-    dependencies:
-      '@volar/language-core': 2.1.6
-      path-browserify: 1.0.1
     dev: false
 
   /@volar/typescript@2.2.5:
@@ -3807,7 +3784,7 @@ packages:
   /typescript-auto-import-cache@0.3.2:
     resolution: {integrity: sha512-+laqe5SFL1vN62FPOOJSUDTZxtgsoOXjneYOXIpx5rQ4UMiN89NAtJLpqLqyebv9fgQ/IMeeTX+mQyRnwvJzvg==}
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
     dev: false
 
   /typescript@5.4.5:
@@ -4112,7 +4089,7 @@ packages:
     dependencies:
       '@volar/language-service': 2.2.5
       path-browserify: 1.0.1
-      semver: 7.6.0
+      semver: 7.6.2
       typescript-auto-import-cache: 0.3.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-nls: 5.2.0
