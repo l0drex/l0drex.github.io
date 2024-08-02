@@ -1,0 +1,125 @@
+---
+import colors from "../languageColors.json"
+import { dateFormatter } from "../utils/general";
+
+interface Props {
+  project: any,
+  href: string
+}
+
+const {project, href} = Astro.props;
+
+const lang = project.languages?.at(0) ?? '';
+
+const fallbackColor = "#646464";
+let color: string = fallbackColor;
+if (lang != null && lang in colors) {
+  color = colors[lang as keyof typeof colors]?.color ?? fallbackColor;
+}
+
+// quick fix
+if (lang === "C++") {
+  color = colors["C++"].color;
+}
+---
+
+<li class="project button">
+    <a href={href}>
+        <h2>{project.title}</h2>
+        <p>
+          {project.description}
+        </p>
+        <div class="tags">
+            <span class="fork">{lang}</span>
+            <span class="lang">{dateFormatter(project.date, true)}</span>
+        </div>
+    </a>
+</li>
+
+<style define:vars={{theme: color}}>
+    .project {
+        flex-shrink: 0;
+
+        color: var(--theme);
+        width: 200px;
+        height: 200px;
+
+        border-radius: .5rem;
+        padding: .5rem 0 .25rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .project {
+            border-color: var(--theme);
+            border-width: 2pt;
+        }
+    }
+
+    li:active {
+        background: var(--theme);
+        color: var(--background);
+    }
+
+    .project a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .project a > :not(p) {
+        margin: 0 .5em;
+    }
+
+    h2 {
+        font-weight: 800;
+        margin: 0;
+    }
+
+    p {
+        background: var(--theme);
+        color: var(--background);
+        padding: 1rem;
+        margin: 0;
+        font-family: monospace;
+
+        flex-grow: 1;
+    }
+
+    :active p {
+        background: var(--background);
+        color: var(--theme);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        li:active {
+            color: var(--backgroundDark);
+        }
+
+        p {
+            color: var(--backgroundDark);
+        }
+
+        :active p {
+            background: var(--backgroundDark);
+        }
+    }
+
+    span {
+        margin: 0;
+    }
+
+    a {
+        color: unset;
+        text-decoration: unset;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .tags {
+        display: flex;
+        justify-content: space-between;
+        padding-top: .25rem;
+    }
+</style>

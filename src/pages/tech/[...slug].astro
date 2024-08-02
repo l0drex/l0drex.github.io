@@ -1,0 +1,44 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import MarkdownPostLayout from '@layouts/BlogPost.astro';
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map(entry => ({
+    params: {slug: entry.slug},
+    props: {entry}
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>
+}
+
+const {entry} = Astro.props;
+const {Content} = await entry.render();
+const projectUrl = "/projects/" + entry.data.project?.slug;
+---
+
+<Layout title={entry.data.title}>
+    <MarkdownPostLayout frontmatter={entry.data}>
+        <Content/>
+        <div slot="references" id="links">
+          {entry.data.project && (
+                  <a href={projectUrl} class="button">
+                      <Icon name="mdi:package"/>
+                      Related project
+                  </a>
+          )}
+        </div>
+    </MarkdownPostLayout>
+</Layout>
+
+<style>
+    #links {
+        text-align: center;
+        margin-top: 2rem;
+    }
+</style>

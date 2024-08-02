@@ -1,67 +1,123 @@
 ---
+import "@styles/global.css";
+import { Icon } from "astro-icon/components";
+
+
 interface Props {
-	title: string;
-	color: string;
-	darkColor?: string;
+  title: string;
+  background: string;
+  color: string;
+  backgroundDark: string;
+  colorDark: string;
 }
 
-const { title, color, darkColor = Astro.props.color } = Astro.props;
+let {title, background, backgroundDark, color, colorDark} = Astro.props;
+
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Personal website of Lorenz Hoffmann" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content={color} media="(prefers-color-scheme: light)"/>
-		<meta name="theme-color" content={darkColor} media="(prefers-color-scheme: dark)"/>
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Personal website of Lorenz Hoffmann"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
+    <meta name="generator" content={Astro.generator}/>
+    <meta name="theme-color" content={background} media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content={backgroundDark} media="(prefers-color-scheme: dark)"/>
+    <title>{title}</title>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="/"><Icon name="mdi:home" /> <span class="label">Home</span></a>
+        <a href="/projects"><Icon name="mdi:package" /> <span class="label">Projects</span></a>
+        <a href="/tech"><Icon name="mdi:code" /> <span class="label">Tech</span></a>
+        <a href="https://l0drex.github.io/travel"><Icon name="mdi:map"/> <span class="label">Travel</span></a>
+        <a href="https://portfolio.pixelfed.social/lh4tography"><Icon name="mdi:camera"/> <span class="label">Photography</span></a>
+    </nav>
+</header>
+
+<main>
+    <slot/>
+</main>
+<footer>
+    <a href='https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement'>Privacy Notice</a>
+</footer>
+</body>
 </html>
-<style is:global define:vars={{ color, darkColor }}>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: Lato, system-ui, sans-serif;
-		background: var(--color);
-		margin: 0;
-	}
 
-	@media (prefers-color-scheme: dark) {
-		html {
-			background: var(--darkColor);
-		}
-	}
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: space-between;
+        align-content: start;
+    }
 
-	body {
-		margin: 0;
-	}
+    header {
+        position: fixed;
+        width: 100%;
+        background: var(--background);
+    }
 
-	code {
-		font-family:
-			monospace;
-	}
+    @media (prefers-color-scheme: dark) {
+        header {
+            background: var(--backgroundDark);
+        }
+    }
 
-	img {
-		object-fit: contain;
-		max-width: min-content;
-		max-height: min-content;
-		width: 100%;
-		height: fit-content;
-	}
+    nav {
+        display: flex;
+        gap: .5rem;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 0 1rem;
+    }
+
+    nav .label {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        nav .label {
+            display: inline;
+        }
+    }
+
+    nav a {
+        padding: 1rem .5rem;
+        display: inline-flex;
+        gap: .25rem;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    main {
+        height: 100%;
+        margin-top: 5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1em;
+    }
 </style>
+
+<style is:global define:vars={{background, backgroundDark, color, colorDark}}>
+</style>
+
+{backgroundDark === "black" && <style is:global>
+    @media (prefers-color-scheme: dark) {
+        button, .button {
+            border: solid white 1pt;
+        }
+    }
+</style>}

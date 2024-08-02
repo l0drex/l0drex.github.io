@@ -1,0 +1,43 @@
+---
+import { dateFormatter } from "../utils/general";
+import {Icon} from "astro-icon/components";
+
+const { journey: blog } = Astro.props;
+
+---
+
+<li>
+    <a href={blog.url} class="button">
+        <h2>{ blog.title } <Icon name="mdi:chevron-right"/></h2>
+        <span>
+          { dateFormatter(blog.date) }
+        </span>
+    </a>
+</li>
+
+<style>
+    li {
+        list-style: none;
+        width: 100%;
+    }
+
+    a {
+        width: 100%;
+        flex-direction: column;
+        border-radius: 1em;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 1.25rem;
+        display: inline-flex;
+        margin: 0;
+    }
+
+    span {
+        align-self: flex-end;
+        font-size: .9em;
+    }
+</style>

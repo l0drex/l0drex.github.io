@@ -1,139 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { GithubIcon, LinkedinIcon, MailIcon, MessageSquareIcon } from "astro-feather";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 
-const size = .75 * 24;
-const color = "#A6B2E5";
+const size = 0.75 * 24;
 ---
 
-<Layout title="/home/" color={color}>
-	<main>
-		<section id="empty"></section>
-		<section id="welcome">
-			<h1>Welcome to my Homepage!</h1>
-			<p>
-				I am a master student of media computer science in Dresden, Germany.
-				My study focuses on Virtual and Augmented Reality.
-			</p>
-		</section>
-		<section id="links">
-			<nav>
-				<a href="/projects">Projects</a>
-				<a href="https://portfolio.pixelfed.social/lh4tography">Photography</a>
-				<a href="/blog">Blog</a>
-			</nav>
-		</section>
-		<section id="contact">
-			<ul>
-				<li><a href="https://github.com/l0drex">
-					<GithubIcon size={size}/>
-					GitHub
-				</a></li>
-				<li><a href="https://www.linkedin.com/in/lorenz-hoffmann-316684215">
-					<LinkedinIcon size={size}/>
-					LinkedIn
-				</a></li>
-				<li><a href="https://dresden.network/@l0drex" rel="me">
-					<MessageSquareIcon size={size}/>
-					Mastodon
-				</a></li>
-				<li><a href="mailto:hoffmann_lorenz@proton.me">
-					<MailIcon size={size}/>
-					Mail
-				</a></li>
-			</ul>
-		</section>
-	</main>
+<Layout title="/home/">
+    <h1>Welcome to my Homepage!</h1>
+    <p>
+        I am a master student of media computer science in Dresden, Germany. My
+        study focuses on Virtual and Augmented Reality.
+    </p>
+    <ul>
+        <li>
+            <a href="https://github.com/l0drex" class="button">
+                <Icon name="mdi:github" size={size} />
+                GitHub
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://www.linkedin.com/in/lorenz-hoffmann-316684215"
+                class="button"
+            >
+                <Icon name="mdi:linkedin" size={size} />
+                LinkedIn
+            </a>
+        </li>
+        <li>
+            <a href="https://dresden.network/@l0drex" rel="me" class="button">
+                <Icon name="mdi:mastodon" size={size} />
+                Mastodon
+            </a>
+        </li>
+        <li>
+            <a href="mailto:hoffmann_lorenz@proton.me" class="button">
+                <Icon name="mdi:email" size={size} />
+                Mail
+            </a>
+        </li>
+    </ul>
 </Layout>
 
-<style define:vars={{color: color}}>
-main {
-	width: 100vw;
-	height: 100vh;
-	background-image: url("https://images.unsplash.com/photo-1681823574555-9ada64d8ce06?w=3840");
-	background-size: cover;
+<style>
+    h1 {
+        margin-top: 15%;
+    }
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
+    p {
+        margin: 0 1em;
+        max-width: 500px;
+        text-align: center;
+    }
 
-#empty {
-	flex-grow: 1;
-	flex-shrink: 1;
-}
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        margin: 2rem 0 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-*::selection {
-	background-color: var(--color);
-}
-
-#welcome {
-	flex-grow: 1;
-
-	color: white;
-	text-align: center;
-}
-
-#welcome h1 {
-	margin: 0 3rem 4rem;
-	font-weight: 800;
-	font-size: 5rem;
-}
-
-#welcome p {
-	width: 50%;
-	margin: auto;
-	font-size: 1.5rem;
-}
-
-#links {
-	flex-grow: 1;
-	font-size: 1.5rem;
-}
-
-nav * {
-	padding: 2rem 4rem;
-	border: solid white;
-	border-radius: .5rem;
-	backdrop-filter: blur(1rem);
-	transition: all;
-}
-
-nav *:hover {
-	background: rgba(255, 255, 255, 0.25);
-}
-
-#contact ul, #links nav {
-	display: flex;
-	flex-direction: row;
-	gap: 4em;
-	justify-content: center;
-
-	padding: 0;
-	list-style: none;
-}
-
-a {
-	display: block;
-	color: white;
-	text-decoration: none;
-	border-bottom: solid 2px;
-	border-color: transparent;
-}
-
-a:hover {
-	border-color: white;
-}
-
-@media (max-width: 768px) {
-	:root {
-		font-size: small;
-	}
-
-	#links nav {
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
-}
+    @media (min-width: 600px) {
+        ul {
+            flex-direction: row;
+        }
+    }
 </style>

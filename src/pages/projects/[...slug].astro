@@ -1,0 +1,117 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import MarkdownPostLayout from "@layouts/BlogPost.astro";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("projects");
+
+    return posts.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+interface Props {
+    entry: CollectionEntry<"projects">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+    title={entry.data.title}
+    background={entry.data.color}
+    backgroundDark={entry.data.colorDark}
+>
+    <MarkdownPostLayout frontmatter={entry.data}>
+        <div id="details">
+            <div>
+                languages:
+                <ul>
+                    {entry.data.languages.map((l) => <li>{l}</li>)}
+                </ul>
+            </div>
+            {
+                entry.data.tools && (
+                    <div>
+                        tools:
+                        <ul>
+                            {entry.data.tools?.map((t) => (
+                                <li>{t}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
+        </div>
+
+        <Content />
+
+        <div slot="references" id="links">
+            {
+                entry.data.url && (
+                    <a href={entry.data.url} class="button">
+                        Check it out!
+                        <Icon name="mdi:open-in-new" />
+                    </a>
+                )
+            }
+            {
+                entry.data.external && (
+                    <a href={entry.data.external} class="button">
+                        <Icon name="mdi:book-open-variant" />
+                        Read more
+                    </a>
+                )
+            }
+            {
+                entry.data.sourceCode && (
+                    <a href={entry.data.sourceCode} class="button">
+                        <Icon name="mdi:code" />
+                        Source code
+                    </a>
+                )
+            }
+        </div>
+    </MarkdownPostLayout>
+</Layout>
+
+<style>
+    #details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+        padding: 0.5rem;
+    }
+
+    #details ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0 0.5em;
+
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    #details li {
+        background: var(--color);
+        color: var(--background);
+        font-weight: bold;
+        padding: 0.25em 0.75em;
+        border-radius: 1000px;
+    }
+
+    #links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin-top: 2rem;
+    }
+</style>

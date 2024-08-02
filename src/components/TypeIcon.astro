@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+import { ProjectType } from "@utils/projects";
+
+interface Props {
+    type: ProjectType;
+}
+
+const { type } = Astro.props;
+---
+
+{type === ProjectType.UNI && <Icon name="mdi:school" />}
+{type === ProjectType.WORK && <Icon name="mdi:briefcase" />}
+{type === ProjectType.HOBBY && <Icon name="mdi:heart" />}

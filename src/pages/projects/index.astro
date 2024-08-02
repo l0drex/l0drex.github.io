@@ -1,61 +1,47 @@
 ---
-import Nav from "../../components/Nav.astro";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import { ProjectType } from "@utils/projects";
+import ProjectList from "@components/ProjectList.astro";
 ---
 
-<Layout color="white" darkColor="black" title="/projects">
-    <main>
-        <Nav direction="column" darkColor="white"/>
+<Layout title="/projects">
+    <h1>Projects</h1>
 
-        <h1>
-            My projects
-        </h1>
-        <nav>
-            <ol>
-                <li><a href="/projects/personal">Personal</a>
-                    <p>
-                        Includes all projects I started in my free time as a hobby.
-                        Sometimes, this happens out of necessity as I am missing a tool or some functionality.
-                        Other times, I want to try out new technology or tools I have learned about.
-                        If everything goes well, these projects are pretty useful and great to have.
-                        But it also happens that I loose interest or run out of time.
-                    </p>
-                </li>
-                <li><a href="/projects/university">University</a>
-                    <p>
-                        These projects are part of my study or my work as a SHK (student assistant).
-                        Very often, these are team projects I worked on together with other students.
-                    </p>
-                </li>
-            </ol>
-        </nav>
-    </main>
+    <section class="content">
+        <h2>My work projects at TU Dresden</h2>
+        <p>
+            Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden.
+            Our research is focused on the application of augmented reality in psychology, teaching and architecture.
+            You can read more about us <a href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a>.
+        </p>
+        <p>Here are some of the projects where I was involved with:</p>
+        <ProjectList type={ProjectType.WORK} />
+    </section>
+
+    <section class="content">
+        <h2>My student projects at TU Dresden</h2>
+        <p>
+            During my study of Bachelor and Master of Media Computer Science (Medieninformatik),
+            I created many different projects.
+            I started studying in 2019, and learned a lot over the years.
+        </p>
+        <ProjectList type={ProjectType.UNI} />
+    </section>
+
+    <section class="content">
+        <h2>Side projects</h2>
+        <p>
+            During my free time, I also created some projects on my own.
+            These were for learning purposes, to solve a specific problem I had or just for fun.
+        </p>
+        <ProjectList type={ProjectType.HOBBY} />
+    </section>
 </Layout>
 
 
 <style>
-    h1 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 900;
-    }
-    nav {
-        font-family: monospace;
-        font-size: 1.25rem;
-        margin: 0 auto;
-        max-width: 50%;
-        min-width: 400px;
-    }
-
-    a {
-        color: inherit;
-        font-weight: bold;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        html {
-            color: white;
-            background: black;
-        }
+    section > * {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 </style>
