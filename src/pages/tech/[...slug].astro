@@ -3,6 +3,7 @@ import { getCollection, CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import MarkdownPostLayout from '@layouts/BlogPost.astro';
 import Layout from "@layouts/Layout.astro";
+import Button from "../../components/Button.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -25,20 +26,10 @@ const projectUrl = "/projects/" + entry.data.project?.slug;
 <Layout title={entry.data.title}>
     <MarkdownPostLayout frontmatter={entry.data}>
         <Content/>
-        <div slot="references" id="links">
+        <div slot="references" id="links" class="text-center my-8">
           {entry.data.project && (
-                  <a href={projectUrl} class="button">
-                      <Icon name="mdi:package"/>
-                      Related project
-                  </a>
+                  <Button href={projectUrl} icon="mdi:package" label="Related project"/>
           )}
         </div>
     </MarkdownPostLayout>
 </Layout>
-
-<style>
-    #links {
-        text-align: center;
-        margin-top: 2rem;
-    }
-</style>
