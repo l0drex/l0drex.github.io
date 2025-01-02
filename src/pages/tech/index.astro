@@ -1,11 +1,10 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import ProjectItem from "@components/projects/ProjectItem.astro";
-import Intro from "../../components/Intro.astro";
-import BlogEntry from "../../components/tech/BlogEntry.astro";
+import Intro from "@components/Intro.astro";
+import BlogEntry from "@components/tech/BlogEntry.astro";
 
-const posts: CollectionEntry<"travel">[] = (await getCollection('blog'))
+const posts: CollectionEntry<"blog">[] = (await getCollection('blog'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 ---
