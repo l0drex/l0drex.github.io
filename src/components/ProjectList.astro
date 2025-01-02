@@ -4,7 +4,7 @@ import Project from "@components/ProjectItem.astro";
 import { ProjectType } from "@utils/projects";
 
 interface Props {
-  limit: number;
+  limit?: number;
   type: ProjectType
 }
 
@@ -12,7 +12,7 @@ const {limit, type} = Astro.props;
 
 const collection: CollectionEntry<"projects">[] = await getCollection('projects');
 let projects = collection
-  .sort(p => p.data.date)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .filter(p => p.data.type === type);
 
 if (limit != null) {
@@ -21,7 +21,7 @@ if (limit != null) {
 ---
 
 <ul>
-  {projects.sort((pa, pb) => pa.data.date - pb.data.date)
+  {projects.sort((pa, pb) => pb.data.date.valueOf() - pa.data.date.valueOf())
     .map(p => <Project project={p.data} href={'/projects/' + p.slug} />
   )}
 </ul>
