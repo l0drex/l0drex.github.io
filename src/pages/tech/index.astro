@@ -9,7 +9,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection('blog'))
 
 ---
 
-<Layout title="/tech">
+<Layout title="/tech" color="black" colorDark="white" background="white" backgroundDark="black">
     <Intro title="Hello world!" font="font-mono">
         This is my personal tech blog.
         Look around and read what you like!
@@ -18,7 +18,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection('blog'))
         
     <ol class="mt-12">
       {posts.map(p =>
-              <BlogEntry title={p.data.title} date={p.data.date} href={"tech/" + p.slug}/>)}
+              <BlogEntry title={p.data.title} date={p.data.date} href={"/tech/" + p.slug}/>)}
     </ol>
 
 </Layout>
