@@ -2,41 +2,27 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import BlogListEntry from "@components/BlogEntry.astro";
-import ProjectItem from "../../components/ProjectItem.astro";
+import ProjectItem from "@components/projects/ProjectItem.astro";
+import Intro from "../../components/Intro.astro";
 
 const posts: CollectionEntry<"travel">[] = await getCollection('blog');
 
 ---
 
 <Layout title="/tech">
-    <h1>Hello world!</h1>
-    <p>
+    <Intro title="Hello world!" font="font-mono">
         This is my personal tech blog.
         Look around and read what you like!
         You might even learn something new.
-    </p>
-
-    <ul id="blogs">
+    </Intro>
+        
+    <ul id="blogs" class="flex flex-row gap-4 items-center p-0">
       {posts.sort(p => p.date)
         .map(p =>
               <ProjectItem project={{
                 title: p.data.title,
                 date: p.data.date
-              }} href='tech/' + p.slug/>)}
+              }} href={"tech/" + p.slug}/>)}
     </ul>
 
 </Layout>
-
-<style>
-    h1 {
-        font-family: hack, monospace;
-    }
-
-    #blogs {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: center;
-        padding: 0;
-    }
-</style>
