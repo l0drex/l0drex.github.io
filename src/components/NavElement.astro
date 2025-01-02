@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    href: string;
+    label: string;
+    icon: string;
+}
+
+const {href, label, icon} = Astro.props
+
+---
+
+<a href={href} class="px-2 py-4 inline-flex gap-1 items-center decoration-0">
+    <Icon name={icon} />
+    <span class="hidden md:inline">{label}</span>
+</a>
