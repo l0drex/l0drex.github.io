@@ -22,14 +22,27 @@ article img {
     border-radius: 0.5rem;
 }
 
+article :not(pre) code {
+    color: gray;
+}
+
 article pre {
     padding: 0.5em 1em;
     border-radius: 0.5em;
+    margin-bottom: 1rem;
+}
+
+article li {
+    margin-left: 2rem;
+    margin-bottom: .5rem;
 }
 
 article ul li {
     list-style: disc;
-    margin-left: 2rem;
+}
+
+article ol li {
+    list-style: decimal;
 }
 
 article a:hover {
