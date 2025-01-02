@@ -1,0 +1,20 @@
+---
+
+interface Props {
+    name: string;
+}
+
+const {name} = Astro.props;
+
+---
+
+<li class="font-bold px-3 py-1 rounded-full">
+    {name}
+</li>
+
+<style>
+    li {
+        background: var(--color);
+        color: var(--background);
+    }
+</style>

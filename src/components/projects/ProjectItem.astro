@@ -23,7 +23,7 @@ if (lang === "C++") {
 }
 ---
 
-<li class="shadow-md flex-shrink-0 w-52 h-52 rounded-lg py-2 pb-1">
+<li class="shadow-md flex-shrink-0 w-52 h-52 rounded-lg py-2 pb-1 dark:border-2">
     <a href={href} class="flex flex-col h-full hover:no-underline">
         <h2 class="font-extrabold m-0 mx-2">{project.title}</h2>
         <p class="p-4 m-0 font-mono flex-grow">
@@ -42,9 +42,8 @@ if (lang === "C++") {
     }
 
     @media (prefers-color-scheme: dark) {
-        .project {
+        li {
             border-color: var(--theme);
-            border-width: 2pt;
         }
     }
 
