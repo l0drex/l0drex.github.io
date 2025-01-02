@@ -2,6 +2,7 @@
 import { dateFormatter } from "../utils/general";
 import JourneyType from "@components/TypeIcon.astro";
 import Intro from "../components/Intro.astro";
+import "@styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 
@@ -9,19 +10,17 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 ---
 
 <Intro title={frontmatter.title}>
-    <div class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
+    <span class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
         {(<JourneyType type={frontmatter.type} />)}
         {(frontmatter.type && date) && "·"}
         <span>{date}</span>
-    </div>
+    </span>
 </Intro>
 
-<div id="container">
-    <slot name="details" />
+<slot name="details" />
 
-    <article class="mx-auto content">
-        <slot />
-    </article>
+<article class="mx-auto content max-w-3xl">
+    <slot />
+</article>
 
-    <slot name="references" />
-</div>
+<slot name="references" />

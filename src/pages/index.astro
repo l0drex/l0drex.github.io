@@ -1,7 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-import Intro from "../components/Intro.astro";
+import Intro from "@components/Intro.astro";
+import Button from "@components/Button.astro";
 
 const size = 0.75 * 24;
 ---
@@ -15,32 +16,9 @@ const size = 0.75 * 24;
     </div>
     
     <ul class="flex list-none gap-4 my-8 p-0 justify-center items-center flex-col sm:flex-row">
-        <li>
-            <a href="https://github.com/l0drex" class="button">
-                <Icon name="mdi:github" size={size} />
-                GitHub
-            </a>
-        </li>
-        <li>
-            <a
-                href="https://www.linkedin.com/in/lorenz-hoffmann-316684215"
-                class="button"
-            >
-                <Icon name="mdi:linkedin" size={size} />
-                LinkedIn
-            </a>
-        </li>
-        <li>
-            <a href="https://dresden.network/@l0drex" rel="me" class="button">
-                <Icon name="mdi:mastodon" size={size} />
-                Mastodon
-            </a>
-        </li>
-        <li>
-            <a href="mailto:hoffmann_lorenz@proton.me" class="button">
-                <Icon name="mdi:email" size={size} />
-                Mail
-            </a>
-        </li>
+        <Button href="https://github.com/l0drex" label="GitHub" icon="mdi:github"/>
+        <Button href="https://www.linkedin.com/in/lorenz-hoffmann-316684215" label="LinkedIn" icon="mdi:linkedin"/>
+        <Button href="https://dresden.network/@l0drex" label="Mastodon" icon="mdi:mastodon"/>
+        <Button href="mailto:hoffmann_lorenz@proton.me" label="Mail" icon="mdi:email"/>
     </ul>
 </Layout>

@@ -51,3 +51,15 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
 
 <style is:global define:vars={{background, backgroundDark, color, colorDark}}>
 </style>
+
+<style>
+    nav {
+        background-color: var(--background);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        nav {
+            background-color: var(--backgroundDark);
+        }
+    }
+</style>
