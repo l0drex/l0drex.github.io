@@ -1,16 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import Intro from "../components/Intro.astro";
 
 const size = 0.75 * 24;
 ---
 
 <Layout title="/home/" background="white" backgroundDark="black" color="black" colorDark="white">
-    <h1 class="mt-56">Welcome to my Homepage!</h1>
-    <p class="my-0 mx-4 max-w-lg text-center">
-        I am a master student of media computer science in Dresden, Germany. My
-        study focuses on Virtual and Augmented Reality.
-    </p>
+    <div class="mt-56 w-max">
+        <Intro title="Welcome to my Homepage!">
+            I am a master student of media computer science in Dresden, Germany. My
+            study focuses on Virtual and Augmented Reality.
+        </Intro>
+    </div>
+    
     <ul class="flex list-none gap-4 my-8 p-0 justify-center items-center flex-col sm:flex-row">
         <li>
             <a href="https://github.com/l0drex" class="button">

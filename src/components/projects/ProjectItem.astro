@@ -1,6 +1,6 @@
 ---
-import colors from "../languageColors.json"
-import { dateFormatter } from "../utils/general";
+import colors from "../../languageColors.json"
+import { dateFormatter } from "@utils/general";
 
 interface Props {
   project: any,
@@ -23,29 +23,22 @@ if (lang === "C++") {
 }
 ---
 
-<li class="project button">
-    <a href={href}>
-        <h2>{project.title}</h2>
-        <p>
+<li class="shadow-md flex-shrink-0 w-52 h-52 rounded-lg py-2 pb-1">
+    <a href={href} class="flex flex-col h-full hover:no-underline">
+        <h2 class="font-extrabold m-0 mx-2">{project.title}</h2>
+        <p class="p-4 m-0 font-mono flex-grow">
           {project.description}
         </p>
-        <div class="tags">
-            <span class="fork">{lang}</span>
-            <span class="lang">{dateFormatter(project.date, true)}</span>
+        <div class="flex justify-between pt-1 mx-2">
+            <span class="m-0 fork">{lang}</span>
+            <span class="m-0 lang">{dateFormatter(project.date, true)}</span>
         </div>
     </a>
 </li>
 
 <style define:vars={{theme: color}}>
-    .project {
-        flex-shrink: 0;
-
+    li {
         color: var(--theme);
-        width: 200px;
-        height: 200px;
-
-        border-radius: .5rem;
-        padding: .5rem 0 .25rem;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -60,29 +53,9 @@ if (lang === "C++") {
         color: var(--background);
     }
 
-    .project a {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .project a > :not(p) {
-        margin: 0 .5em;
-    }
-
-    h2 {
-        font-weight: 800;
-        margin: 0;
-    }
-
     p {
         background: var(--theme);
         color: var(--background);
-        padding: 1rem;
-        margin: 0;
-        font-family: monospace;
-
-        flex-grow: 1;
     }
 
     :active p {
@@ -102,24 +75,5 @@ if (lang === "C++") {
         :active p {
             background: var(--backgroundDark);
         }
-    }
-
-    span {
-        margin: 0;
-    }
-
-    a {
-        color: unset;
-        text-decoration: unset;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    .tags {
-        display: flex;
-        justify-content: space-between;
-        padding-top: .25rem;
     }
 </style>

@@ -1,47 +1,34 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { ProjectType } from "@utils/projects";
-import ProjectList from "@components/ProjectList.astro";
+import Intro from "../../components/Intro.astro";
+import ProjectSection from "@components/projects/ProjectSection.astro";
 ---
 
-<Layout title="/projects">
-    <h1>Projects</h1>
-
-    <section class="content">
-        <h2>My work projects at TU Dresden</h2>
+<Layout title="/projects" background="white" color="black" backgroundDark="black" colorDark="white">
+    <Intro title="Projects"></Intro>
+    
+    <ProjectSection title="My work projects at TU Dresden" type={ProjectType.WORK}>
         <p>
             Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden.
             Our research is focused on the application of augmented reality in psychology, teaching and architecture.
             You can read more about us <a href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a>.
         </p>
         <p>Here are some of the projects where I was involved with:</p>
-        <ProjectList type={ProjectType.WORK} />
-    </section>
-
-    <section class="content">
-        <h2>My student projects at TU Dresden</h2>
+    </ProjectSection>
+    
+    <ProjectSection title="My student projects at TU Dresden" type={ProjectType.UNI}>
         <p>
             During my study of Bachelor and Master of Media Computer Science (Medieninformatik),
             I created many different projects.
             I started studying in 2019, and learned a lot over the years.
         </p>
-        <ProjectList type={ProjectType.UNI} />
-    </section>
+    </ProjectSection>
 
-    <section class="content">
-        <h2>Side projects</h2>
+    <ProjectSection title="Side projects" type={ProjectType.HOBBY}>
         <p>
             During my free time, I also created some projects on my own.
             These were for learning purposes, to solve a specific problem I had or just for fun.
         </p>
-        <ProjectList type={ProjectType.HOBBY} />
-    </section>
+    </ProjectSection>
 </Layout>
-
-
-<style>
-    section > * {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-</style>

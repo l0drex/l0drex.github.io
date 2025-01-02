@@ -1,0 +1,28 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Project from "@components/projects/ProjectItem.astro";
+import { ProjectType } from "@utils/projects";
+
+interface Props {
+  limit?: number;
+  type: ProjectType
+}
+
+const {limit, type} = Astro.props;
+
+const collection: CollectionEntry<"projects">[] = await getCollection('projects');
+let projects = collection
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .filter(p => p.data.type === type);
+
+if (limit != null) {
+  projects = projects.filter((r, i) => i < limit);
+}
+---
+
+<ul class="flex gap-4 p-2 justify-between overflow-x-auto max-w-full 
+md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense">
+  {projects.map(p => 
+          <Project project={p.data} href={'/projects/' + p.slug} />
+  )}
+</ul>
