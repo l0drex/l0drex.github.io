@@ -1,0 +1,16 @@
+---
+import {dateFormatter} from "../../utils/general";
+interface Props {
+    title: string;
+    date: Date;
+    href: string;
+}
+
+const { title, date, href } = Astro.props;
+
+---
+
+<li class="mb-4">
+    <span class="font-mono text-right w-32 mr-8 inline-block text-gray-500">{dateFormatter(date)}</span>
+    <a href={href} class="hover:underline">{title}</a>
+</li>

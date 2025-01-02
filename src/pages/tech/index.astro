@@ -1,11 +1,12 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import BlogListEntry from "@components/BlogEntry.astro";
 import ProjectItem from "@components/projects/ProjectItem.astro";
 import Intro from "../../components/Intro.astro";
+import BlogEntry from "../../components/tech/BlogEntry.astro";
 
-const posts: CollectionEntry<"travel">[] = await getCollection('blog');
+const posts: CollectionEntry<"travel">[] = (await getCollection('blog'))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 ---
 
@@ -16,13 +17,9 @@ const posts: CollectionEntry<"travel">[] = await getCollection('blog');
         You might even learn something new.
     </Intro>
         
-    <ul id="blogs" class="flex flex-row gap-4 items-center p-0">
-      {posts.sort(p => p.date)
-        .map(p =>
-              <ProjectItem project={{
-                title: p.data.title,
-                date: p.data.date
-              }} href={"tech/" + p.slug}/>)}
-    </ul>
+    <ol class="mt-12">
+      {posts.map(p =>
+              <BlogEntry title={p.data.title} date={p.data.date} href={"tech/" + p.slug}/>)}
+    </ol>
 
 </Layout>
