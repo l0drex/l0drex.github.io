@@ -5,13 +5,13 @@ import { Icon } from "astro-icon/components";
 const size = 0.75 * 24;
 ---
 
-<Layout title="/home/">
-    <h1>Welcome to my Homepage!</h1>
-    <p>
+<Layout title="/home/" background="white" backgroundDark="black" color="black" colorDark="white">
+    <h1 class="mt-56">Welcome to my Homepage!</h1>
+    <p class="my-0 mx-4 max-w-lg text-center">
         I am a master student of media computer science in Dresden, Germany. My
         study focuses on Virtual and Augmented Reality.
     </p>
-    <ul>
+    <ul class="flex list-none gap-4 my-8 p-0 justify-center items-center flex-col sm:flex-row">
         <li>
             <a href="https://github.com/l0drex" class="button">
                 <Icon name="mdi:github" size={size} />
@@ -41,32 +41,3 @@ const size = 0.75 * 24;
         </li>
     </ul>
 </Layout>
-
-<style>
-    h1 {
-        margin-top: 15%;
-    }
-
-    p {
-        margin: 0 1em;
-        max-width: 500px;
-        text-align: center;
-    }
-
-    ul {
-        display: flex;
-        list-style: none;
-        gap: 1rem;
-        margin: 2rem 0 0;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    @media (min-width: 600px) {
-        ul {
-            flex-direction: row;
-        }
-    }
-</style>
