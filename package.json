@@ -19,6 +19,7 @@
     "@octokit/types": "^12.6.0",
     "astro": "^4.13.2",
     "astro-icon": "^1.1.0",
+    "astro-robots-txt": "^1.0.0",
     "octokit": "^3.2.1",
     "tailwindcss": "^3.4.17"
   },
