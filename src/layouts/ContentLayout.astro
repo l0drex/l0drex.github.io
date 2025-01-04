@@ -16,7 +16,7 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
 
 <BaseLayout title={title} background={background} color={color} backgroundDark={backgroundDark} colorDark={colorDark}>
     <header class="fixed w-full">
-        <nav class="flex gap-2 justify-around shadow-lg">
+        <nav class="flex gap-8 justify-center shadow-lg">
             <NavElement href="/" icon="mdi:home" label="Home"/>
             <NavElement href="/projects" icon="mdi:package" label="Projects"/>
             <NavElement href="/tech" icon="mdi:code" label="Tech"/>
@@ -25,7 +25,7 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
         </nav>
     </header>
 
-    <main class="flex flex-col items-center mt-14">
+    <main class="flex flex-col items-center mt-14 flex-grow justify-center">
         <slot/>
     </main>
     <footer class="flex justify-center m-2">

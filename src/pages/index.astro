@@ -4,15 +4,13 @@ import Intro from "@components/Intro.astro";
 import Button from "@components/Button.astro";
 ---
 
-<Layout title="/home/" background="#f3f4f6" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
-    <div class="mt-56 w-max">
-        <Intro title="Welcome to my Homepage!">
-            I am a master student of media computer science in Dresden, Germany. My
-            study focuses on Virtual and Augmented Reality.
-        </Intro>
-    </div>
+<Layout title="/home/" background="#f9fafb" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
+    <Intro title="Welcome to my Homepage!">
+        I am a master student of media computer science in Dresden, Germany. My
+        study focuses on Virtual and Augmented Reality.
+    </Intro>
     
-    <ul class="flex list-none gap-4 my-8 p-0 justify-center items-center flex-col sm:flex-row">
+    <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row">
         <Button href="https://github.com/l0drex" label="GitHub" icon="mdi:github"/>
         <Button href="https://www.linkedin.com/in/lorenz-hoffmann-316684215" label="LinkedIn" icon="mdi:linkedin"/>
         <Button href="https://dresden.network/@l0drex" label="Mastodon" icon="mdi:mastodon"/>
