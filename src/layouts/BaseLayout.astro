@@ -1,18 +1,15 @@
 ---
 import "@styles/global.css";
-import NavElement from "../components/NavElement.astro";
-
 
 interface Props {
-  title: string;
-  background: string;
-  color: string;
-  backgroundDark: string;
-  colorDark: string;
+    title: string;
+    background?: string;
+    color?: string;
+    backgroundDark?: string;
+    colorDark?: string;
 }
 
 let {title, background, backgroundDark, color, colorDark} = Astro.props;
-
 ---
 
 <!doctype html>
@@ -29,22 +26,7 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
 </head>
 
 <body class="flex flex-col justify-between min-h-screen font-sans">
-<header class="fixed w-full">
-    <nav class="flex gap-2 justify-around shadow-lg">
-        <NavElement href="/" icon="mdi:home" label="Home"/>
-        <NavElement href="/projects" icon="mdi:package" label="Projects"/>
-        <NavElement href="/tech" icon="mdi:code" label="Tech"/>
-        <NavElement href="https://l0drex.github.io/travel" icon="mdi:map" label="Travel"/>
-        <NavElement href="https://portfolio.pixelfed.social/lh4tography" icon="mdi:camera" label="Photography"/>
-    </nav>
-</header>
-
-<main class="flex flex-col items-center mt-14">
     <slot/>
-</main>
-<footer class="flex justify-center m-2">
-    <a href='https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement'>Privacy Notice</a>
-</footer>
 </body>
 </html>
 
@@ -55,7 +37,7 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
     nav {
         background-color: var(--background);
     }
-    
+
     @media (prefers-color-scheme: dark) {
         nav {
             background-color: var(--backgroundDark);
