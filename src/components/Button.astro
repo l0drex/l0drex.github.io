@@ -15,7 +15,16 @@ const {href, label, icon} = Astro.props;
 inline-flex gap-1 items-center 
 select-none shadow-md shadow-neutral-400
 transition-all hover:no-underline hover:shadow-lg hover:shadow-neutral-400 hover:scale-105
+dark:shadow-none dark:border-2
 ">
     {label}
     <Icon name={icon}/>
 </a>
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        a {
+            border-color: var(--colorDark);
+        }
+    }
+</style>

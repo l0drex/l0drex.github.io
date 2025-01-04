@@ -10,6 +10,12 @@ interface Props {
 }
 
 let {title, background, backgroundDark, color, colorDark} = Astro.props;
+
+background ??= "white";
+color ??= "black";
+backgroundDark ??= "black";
+colorDark ??= "white";
+
 ---
 
 <!doctype html>
@@ -34,12 +40,14 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
 </style>
 
 <style>
-    nav {
+    html {
+        color: var(--color);
         background-color: var(--background);
     }
-
+    
     @media (prefers-color-scheme: dark) {
-        nav {
+        html {
+            color: var(--colorDark);
             background-color: var(--backgroundDark);
         }
     }

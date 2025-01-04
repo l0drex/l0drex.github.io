@@ -6,22 +6,12 @@
     --shadow: rgba(0, 0, 0, 0.33) 0 0.25rem 0.5rem;
 }
 
-html {
-    color: var(--color);
-    background-color: var(--background);
-}
-
 *::selection {
     background-color: var(--color);
     color: var(--background);
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        color: var(--colorDark);
-        background-color: var(--backgroundDark);
-    }
-
     ::selection {
         background-color: var(--colorDark);
         color: var(--backgroundDark);
