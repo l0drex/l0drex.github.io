@@ -16,4 +16,11 @@ const {name} = Astro.props;
         background: var(--color);
         color: var(--background);
     }
+    
+    @media (prefers-color-scheme: dark) {
+        li {
+            background: var(--background);
+            color: var(--color);
+        }
+    }
 </style>
