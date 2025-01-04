@@ -23,10 +23,14 @@ if (lang === "C++") {
 }
 ---
 
-<li class="shadow-md flex-shrink-0 w-52 h-52 rounded-lg py-2 pb-1 dark:border-2">
+<li class="flex-shrink-0 w-52 h-52 rounded-lg py-1 px-1
+hover:shadow-md hover:scale-105 transition-all active:scale-95
+bg-[var(--theme)] text-white border-[var(--theme)]">
     <a href={href} class="flex flex-col h-full hover:no-underline">
-        <h2 class="font-extrabold m-0 mx-2">{project.title}</h2>
-        <p class="p-4 m-0 font-mono flex-grow">
+        <h2 class="font-extrabold mx-1">{project.title}</h2>
+        <p class="p-2 flex-grow rounded-md mt-1 
+        bg-white bg-opacity-95 text-[var(--theme)]
+        dark:bg-black dark:bg-opacity-70">
           {project.description}
         </p>
         <div class="flex justify-between pt-1 mx-2">
@@ -37,42 +41,4 @@ if (lang === "C++") {
 </li>
 
 <style define:vars={{theme: color}}>
-    li {
-        color: var(--theme);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        li {
-            border-color: var(--theme);
-        }
-    }
-
-    li:active {
-        background: var(--theme);
-        color: var(--background);
-    }
-
-    p {
-        background: var(--theme);
-        color: var(--background);
-    }
-
-    :active p {
-        background: var(--background);
-        color: var(--theme);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        li:active {
-            color: var(--backgroundDark);
-        }
-
-        p {
-            color: var(--backgroundDark);
-        }
-
-        :active p {
-            background: var(--backgroundDark);
-        }
-    }
 </style>
