@@ -1,6 +1,7 @@
 {
   "name": "l0drex",
   "version": "0.1.0",
+  "packageManager": "yarn@3.4.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,13 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.4",
-    "@astrojs/tailwind": "^5.1.4",
-    "@astrojs/ts-plugin": "^1.9.1",
-    "@astrojs/vue": "^4.5.0",
+    "@astrojs/check": "0.9.6",
+    "@astrojs/tailwind": "6.0.2",
+    "@astrojs/ts-plugin": "1.10.6",
+    "@astrojs/vue": "5.1.4",
     "@iconify-json/mdi": "^1.1.68",
     "@octokit/types": "^12.6.0",
-    "astro": "^4.13.2",
+    "astro": "5.16.11",
     "astro-icon": "^1.1.0",
     "astro-robots-txt": "^1.0.0",
     "octokit": "^3.2.1",
