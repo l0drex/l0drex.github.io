@@ -7,6 +7,7 @@ languages: ["Astro", "Vue", "GLSL"]
 url: "https://l0drex.github.io/travel"
 color: "#FFEDD4"
 colorDark: "#0B0908"
+small: false
 ---
 
 I am often travelling around the world with my bicycle or on foot.

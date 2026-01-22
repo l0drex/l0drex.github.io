@@ -6,6 +6,7 @@ date: 2020-04-13
 languages: ["Python", "JavaScript"]
 tools: ["Qt", "Qt Widgets"]
 sourceCode: "https://github.com/oskarsh/Yin-Yang"
+small: false
 ---
 
 Yin & Yang is a tool for Linux that automatically changes the theme for various distros and applications after the sunset.

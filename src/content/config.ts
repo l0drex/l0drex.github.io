@@ -3,11 +3,11 @@ import { ProjectType } from "@utils/projects";
 
 const blogBase = {
   title: z.string(),
-  date: z.date()
-}
+  date: z.date(),
+};
 
 const projectCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     ...blogBase,
     description: z.string(),
@@ -19,18 +19,19 @@ const projectCollection = defineCollection({
     sourceCode: z.optional(z.string().url()),
     url: z.optional(z.string().url()),
     external: z.optional(z.string().url()),
-  })
+    small: z.optional(z.boolean()).default(true),
+  }),
 });
 
 const blogCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     ...blogBase,
-    project: z.optional(reference('projects')),
-  })
-})
+    project: z.optional(reference("projects")),
+  }),
+});
 
 export const collections = {
-  'projects': projectCollection,
-  'blog': blogCollection
-}
+  projects: projectCollection,
+  blog: blogCollection,
+};

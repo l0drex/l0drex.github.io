@@ -5,6 +5,7 @@ description: Exhibit that decodes punch stripes it in various ways
 date: 2024-06-06
 color: 'lime'
 languages: ["Python"]
+small: false
 ---
 
 _Retro Reboot_ is an exhibit for the exhibition _Data Spaces_ in our university.

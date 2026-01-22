@@ -5,6 +5,7 @@ description: Bachelor thesis about multi-user locomotion in co-located mixed rea
 date: 2024-01-08
 languages: ["C#"]
 tools: ['Unity', 'ViewR']
+small: false
 ---
 
 This is the project of my Bachelor thesis. I explored different techniques to move multiple people at once, 

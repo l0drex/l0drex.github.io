@@ -7,6 +7,7 @@ languages: ["C#"]
 tools: ["Unity", "ViewR"]
 sourceCode: "https://github.com/easonwong-de/Adaptive-Tab-Bar-Colour"
 url: "https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/"
+small: false
 ---
 
 In this project, we used augmented reality to teach students various geometric constructions.
