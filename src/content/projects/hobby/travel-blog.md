@@ -3,7 +3,7 @@ title: Travel blog
 type: hobby
 description: Travel blog featuring interactive maps
 date: 2024-08-01
-languages: ["Astro", "Vue", "GLSL"]
+languages: [ "Astro", "Vue", "GLSL" ]
 url: "https://l0drex.github.io/travel"
 sourceCode: "https://github.com/l0drex/travel"
 color: "#FFEDD4"
@@ -32,7 +32,8 @@ This shader maps a black and white texture to a foreground color and transparenc
 shines on the globe and casts shadows. This black and white image is again mapped to transparency.
 The result is a 3D globe with matching colors fading out from and back into transparency.
 
-The rotation is heavily inspired by the green [_"Trackmania - Nations Forever"_](https://www.youtube.com/watch?v=4_MD9DbssIw) menu screen. It simulates the rotation
+The rotation is heavily inspired by the green [_"Trackmania - Nations
+Forever"_](https://www.youtube.com/watch?v=4_MD9DbssIw) menu screen. It simulates the rotation
 of earth around the sun, with a tilted axis.
 
 ![Screenshot of the home page with the globe](@assets/projects/travel-home.png)

@@ -2,53 +2,60 @@
 import "@styles/global.css";
 
 interface Props {
-    title: string;
-    background?: string;
-    color?: string;
-    backgroundDark?: string;
-    colorDark?: string;
+  title: string;
+  background?: string;
+  color?: string;
+  backgroundDark?: string;
+  colorDark?: string;
 }
 
-let {title, background, backgroundDark, color, colorDark} = Astro.props;
+let { title, background, backgroundDark, color, colorDark } = Astro.props;
 
 background ??= "white";
 color ??= "black";
 backgroundDark ??= "black";
 colorDark ??= "white";
-
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="description" content="Personal website of Lorenz Hoffmann"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
-    <meta name="generator" content={Astro.generator}/>
-    <meta name="theme-color" content={background} media="(prefers-color-scheme: light)"/>
-    <meta name="theme-color" content={backgroundDark} media="(prefers-color-scheme: dark)"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Personal website of Lorenz Hoffmann" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="theme-color"
+      content={background}
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content={backgroundDark}
+      media="(prefers-color-scheme: dark)"
+    />
     <title>{title}</title>
-</head>
+  </head>
 
-<body class="flex flex-col justify-between min-h-screen font-sans">
-    <slot/>
-</body>
+  <body class="flex flex-col justify-between min-h-screen font-sans">
+    <slot />
+  </body>
 </html>
 
-<style is:global define:vars={{background, backgroundDark, color, colorDark}}>
-</style>
+<style is:global define:vars={{ background, backgroundDark, color, colorDark }}
+></style>
 
 <style>
+  html {
+    color: var(--color);
+    background-color: var(--background);
+  }
+
+  @media (prefers-color-scheme: dark) {
     html {
-        color: var(--color);
-        background-color: var(--background);
+      color: var(--colorDark);
+      background-color: var(--backgroundDark);
     }
-    
-    @media (prefers-color-scheme: dark) {
-        html {
-            color: var(--colorDark);
-            background-color: var(--backgroundDark);
-        }
-    }
+  }
 </style>

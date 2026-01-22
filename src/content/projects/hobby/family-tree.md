@@ -5,15 +5,15 @@ description: Draw your own family tree 🌳  in your web browser
 date: 2021-11-14
 color: '#D1E8D1'
 colorDark: '#172017'
-languages: ["TypeScript", "Python"]
-tools: ["react", "d3js", "webcola", "GedcomX"]
+languages: [ "TypeScript", "Python" ]
+tools: [ "react", "d3js", "webcola", "GedcomX" ]
 sourceCode: "https://github.com/l0drex/family-tree"
 url: "https://l0drex.github.io/family-tree/"
 small: false
 ---
 
 I built this website because I wanted a privacy-focused way of sharing a family tree.
-The result is static website that loads a GedcomX file from your disk, parses it and shows you the family tree. 
+The result is static website that loads a GedcomX file from your disk, parses it and shows you the family tree.
 There is no logic on the server side other than providing the JavaScript, HTML and CSS files.
 
 ![](@assets/projects/family-tree.png)

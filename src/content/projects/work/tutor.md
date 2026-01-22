@@ -3,8 +3,8 @@ title: Tutor
 date: 2025-10-01
 description: I worked as tutor for the lecture "Foundations of Virtual Reality".
 type: work
-languages: ["C#", "typst"]
-tools: ["Unity"]
+languages: [ "C#", "typst" ]
+tools: [ "Unity" ]
 ---
 
 During the winter semesters, I work as a tutor for the IXLab at TU-Dresden as a tutor.

@@ -10,18 +10,18 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 ---
 
 <Intro title={frontmatter.title}>
-    <span class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
-        <TypeIcon type={frontmatter.type} />
-        {frontmatter.type}
-        {(frontmatter.type && date) && "·"}
-        <span>{date}</span>
-    </span>
+  <span class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
+    <TypeIcon type={frontmatter.type} />
+    {frontmatter.type}
+    {frontmatter.type && date && "·"}
+    <span>{date}</span>
+  </span>
 </Intro>
 
 <slot name="details" />
 
 <article class="mx-auto content max-w-3xl">
-    <slot />
+  <slot />
 </article>
 
 <slot name="references" />

@@ -17,6 +17,6 @@ with a server on the network.
 
 ![An example of the mazes. A grid of lines and intersection points with markers for connection possibilities and obstacles.](@assets/projects/robolab-planet.jpg)
 
-My task was to develop the maze-solving algorithm using 
+My task was to develop the maze-solving algorithm using
 [Dijkstras Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) as well as establishing and managing
 the connection and communication to the server.

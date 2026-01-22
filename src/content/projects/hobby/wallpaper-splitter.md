@@ -3,8 +3,8 @@ title: Wallpaper
 type: hobby
 description: Apply a single image as your wallpaper spanning all of your screens on KDE.
 date: 2021-09-23
-languages: ["C++"]
-tools: ["Qt", "Qt Widgets"]
+languages: [ "C++" ]
+tools: [ "Qt", "Qt Widgets" ]
 sourceCode: "https://github.com/l0drex/WallpaperSplitter"
 color: "#e8d9ffff"
 ---

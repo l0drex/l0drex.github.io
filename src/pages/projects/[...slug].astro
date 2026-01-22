@@ -6,16 +6,16 @@ import TagList from "@components/projects/TagList.astro";
 import Button from "@components/Button.astro";
 
 export async function getStaticPaths() {
-    const posts: CollectionEntry<'projects'>[] = await getCollection("projects");
+  const posts: CollectionEntry<"projects">[] = await getCollection("projects");
 
-    return posts.map((entry) => ({
-        params: { slug: entry.slug },
-        props: { entry },
-    }));
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 interface Props {
-    entry: CollectionEntry<"projects">;
+  entry: CollectionEntry<"projects">;
 }
 
 const { entry } = Astro.props;
@@ -23,29 +23,60 @@ const { Content } = await entry.render();
 ---
 
 <Layout
-    title={entry.data.title}
-    background={entry.data.color}
-    backgroundDark={entry.data.colorDark}
+  title={entry.data.title}
+  background={entry.data.color}
+  backgroundDark={entry.data.colorDark}
 >
-    <MarkdownPostLayout frontmatter={entry.data}>
-        <div class="flex flex-wrap justify-center gap-4 p-2" slot="details">
-            <div>
-                languages: <TagList tags={entry.data.languages}/>
-            </div>
-            {entry.data.tools && <div>
-                tools: <TagList tags={entry.data.tools}/>
-            </div>}
-        </div>
+  <MarkdownPostLayout frontmatter={entry.data}>
+    <div class="flex flex-wrap justify-center gap-4 p-2" slot="details">
+      <div>
+        languages:
+        <TagList tags={entry.data.languages} />
+      </div>
+      {
+        entry.data.tools && (
+          <div>
+            tools:
+            <TagList tags={entry.data.tools} />
+          </div>
+        )
+      }
+    </div>
 
-        <Content />
+    <Content />
 
-        <div slot="references" id="links" class="flex gap-4 flex-wrap justify-center mt-8">
-            {entry.data.url && 
-                    <Button href={entry.data.url} label="Check it out!" icon="mdi:open-in-new"/>}
-            {entry.data.external && 
-                    <Button href={entry.data.external} icon="mdi:book-open-variant" label="Read more"/>}
-            {entry.data.sourceCode &&
-                    <Button href={entry.data.sourceCode} icon="mdi:code" label="Source code"/>}
-        </div>
-    </MarkdownPostLayout>
+    <div
+      slot="references"
+      id="links"
+      class="flex gap-4 flex-wrap justify-center mt-8"
+    >
+      {
+        entry.data.url && (
+          <Button
+            href={entry.data.url}
+            label="Check it out!"
+            icon="mdi:open-in-new"
+          />
+        )
+      }
+      {
+        entry.data.external && (
+          <Button
+            href={entry.data.external}
+            icon="mdi:book-open-variant"
+            label="Read more"
+          />
+        )
+      }
+      {
+        entry.data.sourceCode && (
+          <Button
+            href={entry.data.sourceCode}
+            icon="mdi:code"
+            label="Source code"
+          />
+        )
+      }
+    </div>
+  </MarkdownPostLayout>
 </Layout>

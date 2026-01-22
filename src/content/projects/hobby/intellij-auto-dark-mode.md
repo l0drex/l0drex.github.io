@@ -9,5 +9,6 @@ url: "https://plugins.jetbrains.com/plugin/14076-auto-dark-mode"
 ---
 
 This is not a project that I started, instead I only implemented support for a freedesktop API.
-I made a pull request with a new implementation that added support for many Linux desktop environments 
-such as KDE and Gnome. It makes a DBus call to get the theme preferences and reports that to the existing plugin structure.
+I made a pull request with a new implementation that added support for many Linux desktop environments
+such as KDE and Gnome. It makes a DBus call to get the theme preferences and reports that to the existing plugin
+structure.

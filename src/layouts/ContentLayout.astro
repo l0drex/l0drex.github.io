@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-
 interface Props {
   title: string;
   background: string;
@@ -10,29 +9,38 @@ interface Props {
   colorDark: string;
 }
 
-let {title, background, backgroundDark, color, colorDark} = Astro.props;
+let { title, background, backgroundDark, color, colorDark } = Astro.props;
 ---
 
-<BaseLayout title={title} background={background} color={color} backgroundDark={backgroundDark} colorDark={colorDark}>
+<BaseLayout
+  title={title}
+  background={background}
+  color={color}
+  backgroundDark={backgroundDark}
+  colorDark={colorDark}
+>
   <div class="absolute top-0 left-0 -z-40 h-screen w-screen fixed">
     <slot name="background" />
   </div>
-    <main class="flex flex-col items-center mt-14 flex-grow justify-center">
-        <slot/>
-    </main>
-    <footer class="flex justify-center m-2">
-        <a href='https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement'>Privacy Notice</a>
-    </footer>
+  <main class="flex flex-col items-center mt-14 flex-grow justify-center">
+    <slot />
+  </main>
+  <footer class="flex justify-center m-2">
+    <a
+      href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+      >Privacy Notice</a
+    >
+  </footer>
 </BaseLayout>
 
 <style>
-    nav {
-        background-color: var(--background);
-    }
+  nav {
+    background-color: var(--background);
+  }
 
-    @media (prefers-color-scheme: dark) {
-        nav {
-            background-color: var(--backgroundDark);
-        }
+  @media (prefers-color-scheme: dark) {
+    nav {
+      background-color: var(--backgroundDark);
     }
+  }
 </style>

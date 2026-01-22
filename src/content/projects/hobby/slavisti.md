@@ -4,13 +4,14 @@ type: hobby
 description: Simple match-stick game with hidden complexity
 date: 2024-06-01
 color: "#ffbea2"
-languages: ["Rust", "gdscript"]
-tools: ["Godot"]
+languages: [ "Rust", "gdscript" ]
+tools: [ "Godot" ]
 small: false
 ---
 
 During a hike with a group of the university, I learned about a game with match sticks that someone designed.
 The rules are simple:
+
 - Create a figure of triangles and squares
 - Write down the number of cycles in the figure as a roman number
 

@@ -1,15 +1,15 @@
 ---
-import colors from "../../languageColors.json"
+import colors from "../../languageColors.json";
 import { dateFormatter } from "@utils/general";
 
 interface Props {
-  project: any,
-  href: string
+  project: any;
+  href: string;
 }
 
-const {project, href} = Astro.props;
+const { project, href } = Astro.props;
 
-const lang = project.languages?.at(0) ?? '';
+const lang = project.languages?.at(0) ?? "";
 
 const fallbackColor = "#646464";
 let color: string = fallbackColor;
@@ -23,9 +23,14 @@ if (lang === "C++") {
 }
 ---
 
-<li class="flex-shrink-0 w-52 h-50 rounded-xl py-1 px-1 mb-4
-bg-white shadow-md select-none">
-  <a href={href} class="flex flex-col h-full hover:no-underline justify-between">
+<li
+  class="flex-shrink-0 w-52 h-50 rounded-xl py-1 px-1 mb-4
+bg-white shadow-md select-none"
+>
+  <a
+    href={href}
+    class="flex flex-col h-full hover:no-underline justify-between"
+  >
     <div class="flex justify-between my-1 mx-2 text-gray-500">
       <div class="m-0">{lang}</div>
       <div class="m-0">{dateFormatter(project.date, true)}</div>
@@ -33,9 +38,12 @@ bg-white shadow-md select-none">
     <p class="px-2 rounded-md">
       {project.description}
     </p>
-    <h2 class="font-extrabold mx-auto px-4 whitespace-nowrap text-center bg-[var(--theme)] rounded-lg py-2 text-lg text-white relative top-4">{project.title}</h2>
+    <h2
+      class="font-extrabold mx-auto px-4 whitespace-nowrap text-center bg-[var(--theme)] rounded-lg py-2 text-lg text-white relative top-4"
+    >
+      {project.title}
+    </h2>
   </a>
 </li>
 
-<style define:vars={{theme: color}}>
-</style>
+<style define:vars={{ theme: color }}></style>

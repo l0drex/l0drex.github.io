@@ -4,21 +4,32 @@ import Layout from "@layouts/ContentLayout.astro";
 import Intro from "@components/Intro.astro";
 import BlogEntry from "@components/tech/BlogEntry.astro";
 
-const posts: CollectionEntry<"blog">[] = (await getCollection('blog'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
+const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 ---
 
-<Layout title="/tech" background="#f9fafb" color="#111827" backgroundDark="#030712" colorDark="#f9fafb">
-    <Intro title="Hello world!" font="font-mono">
-        This is my personal tech blog.
-        Look around and read what you like!
-        You might even learn something new.
-    </Intro>
-        
-    <ol class="mt-12">
-      {posts.map(p =>
-              <BlogEntry title={p.data.title} date={p.data.date} href={"/tech/" + p.slug}/>)}
-    </ol>
+<Layout
+  title="/tech"
+  background="#f9fafb"
+  color="#111827"
+  backgroundDark="#030712"
+  colorDark="#f9fafb"
+>
+  <Intro title="Hello world!" font="font-mono">
+    This is my personal tech blog. Look around and read what you like! You might
+    even learn something new.
+  </Intro>
 
+  <ol class="mt-12">
+    {
+      posts.map((p) => (
+        <BlogEntry
+          title={p.data.title}
+          date={p.data.date}
+          href={"/tech/" + p.slug}
+        />
+      ))
+    }
+  </ol>
 </Layout>

@@ -5,24 +5,29 @@ import { ProjectType } from "@utils/projects";
 
 interface Props {
   limit?: number;
-  type: ProjectType
+  type: ProjectType;
 }
 
-const {limit, type} = Astro.props;
+const { limit, type } = Astro.props;
 
-const collection: CollectionEntry<"projects">[] = await getCollection('projects');
+const collection: CollectionEntry<"projects">[] =
+  await getCollection("projects");
 let projects = collection
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .filter(p => p.data.type === type && p.data.small);
+  .filter((p) => p.data.type === type && p.data.small);
 
 if (limit != null) {
   projects = projects.filter((r, i) => i < limit);
 }
 ---
 
-<ul class="flex gap-4 p-2 justify-between overflow-x-auto max-w-full pb-4
-md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense">
-  {projects.map(p => 
-          <SmallProjectItem project={p.data} href={'/projects/' + p.slug} />
-  )}
+<ul
+  class="flex gap-4 p-2 justify-between overflow-x-auto max-w-full pb-4
+md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense"
+>
+  {
+    projects.map((p) => (
+      <SmallProjectItem project={p.data} href={"/projects/" + p.slug} />
+    ))
+  }
 </ul>

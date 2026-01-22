@@ -4,8 +4,8 @@ type: university
 description: Exhibit that decodes punch stripes it in various ways
 date: 2024-06-06
 color: '#ffffa2'
-languages: ["Python"]
-tools: ["OpenCV"]
+languages: [ "Python" ]
+tools: [ "OpenCV" ]
 small: false
 ---
 
@@ -15,13 +15,13 @@ and interpreted to perform a calculation, to generate an image or to play some m
 
 ![](@assets/projects/retro-reboot.jpg)
 
-The image generation simply puts the holes on to a grid and runs 
+The image generation simply puts the holes on to a grid and runs
 [Conways Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) on them.
 
 In the calculation module, the punch stripe input is interpreted according to the original "Fernmeldealphabet"
 from the D4A. Each column is either a number or calculation symbol. One after another, the columns are read and
 evaluated. The display shows the input and the current result.
 
-The music is created by interpreting the punch stripe as a drum machine and 
+The music is created by interpreting the punch stripe as a drum machine and
 playing an audio sample whenever a hole is present.
 The display shows a simple visualization of the audio currently playing.

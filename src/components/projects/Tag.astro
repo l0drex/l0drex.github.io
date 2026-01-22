@@ -1,26 +1,25 @@
 ---
 interface Props {
-    name: string;
+  name: string;
 }
 
-const {name} = Astro.props;
-
+const { name } = Astro.props;
 ---
 
 <li class="font-bold px-3 py-1 rounded-full">
-    {name}
+  {name}
 </li>
 
 <style>
+  li {
+    background: var(--color);
+    color: var(--background);
+  }
+
+  @media (prefers-color-scheme: dark) {
     li {
-        background: var(--color);
-        color: var(--background);
+      background: var(--background);
+      color: var(--color);
     }
-    
-    @media (prefers-color-scheme: dark) {
-        li {
-            background: var(--background);
-            color: var(--color);
-        }
-    }
+  }
 </style>

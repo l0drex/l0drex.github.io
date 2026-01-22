@@ -3,13 +3,13 @@ title: VR locomotion
 type: university
 description: Bachelor thesis about multi-user locomotion in co-located mixed reality
 date: 2024-01-08
-languages: ["C#"]
-tools: ['Unity', 'ViewR']
+languages: [ "C#" ]
+tools: [ 'Unity', 'ViewR' ]
 small: false
 color: "#c1d0f5"
 ---
 
-This is the project of my Bachelor thesis. I explored different techniques to move multiple people at once, 
+This is the project of my Bachelor thesis. I explored different techniques to move multiple people at once,
 who are all in a VR headset and in the same room.
 
 ![](@assets/projects/group-locomotion.png)

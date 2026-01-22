@@ -7,88 +7,127 @@ import ProjectSection from "@components/projects/ProjectSection.astro";
 import Section from "@components/Section.astro";
 ---
 
-<Layout title="/home/" background="white" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
-  <div slot="background" class="w-full h-full bg-radial from-white to-gray-200"/>
-  
-  <Intro title="Who is Lorenz?"></Intro>
+<Layout
+  title="/home/"
+  background="white"
+  color="#111827"
+  backgroundDark="#111827"
+  colorDark="#f3f4f6"
+>
+  <div slot="background" class="w-full h-full bg-radial from-white to-gray-200">
+  </div>
+
+  <Intro title="Who is Lorenz?" />
 
   <ProjectSection title="…a student" type={ProjectType.UNI}>
     <p>
-      I am currently studying Master of Media Computer Science (Medieninformatik)
-      at the Technical University of Dresden.
-      During my time at the university, a learned a lot of things around 
-      computers and how we humans can interact and work with them.
-      Here are some of the projects developed:
+      I am currently studying Master of Media Computer Science
+      (Medieninformatik) at the Technical University of Dresden. During my time
+      at the university, a learned a lot of things around computers and how we
+      humans can interact and work with them. Here are some of the projects
+      developed:
     </p>
   </ProjectSection>
-  
+
   <ProjectSection title="…a developer and tutor" type={ProjectType.WORK}>
     <p>
-      Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden.
-      Our research is focused on the application of augmented reality in psychology, teaching and architecture.
-      You can read more about us <a href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a>.
+      Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden. Our
+      research is focused on the application of augmented reality in psychology,
+      teaching and architecture. You can read more about us <a
+        href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a
+      >.
     </p>
     <p>Here are some of the projects where I was involved with:</p>
   </ProjectSection>
 
-  <ProjectSection title="…a creative mind solving problems" type={ProjectType.HOBBY}>
+  <ProjectSection
+    title="…a creative mind solving problems"
+    type={ProjectType.HOBBY}
+  >
     <p>
-      During my free time, I also created some projects on my own.
-      These were for learning purposes, to solve a specific problem I had or just for fun.
+      During my free time, I also created some projects on my own. These were
+      for learning purposes, to solve a specific problem I had or just for fun.
     </p>
   </ProjectSection>
-  
+
   <Section title="…a believer in open source software">
     <p>
-      We as humans should work together instead of against each other.
-      If we find a solution to a common problem, 
-      we should make that solution available to everyone.
+      We as humans should work together instead of against each other. If we
+      find a solution to a common problem, we should make that solution
+      available to everyone.
     </p>
     <p>
-      All of my PCs use a Linux distribution and 
-      I am mainly relying on open source software.
-      Upon finding an issue, I aim to contribute by opening a ticket or creating a pull request. 
-      I also maintain a Nextcloud instance for my family.
-      Since about 2021, I reduced my social media usage primarily to Mastodon and Pixelfed.
+      All of my PCs use a Linux distribution and I am mainly relying on open
+      source software. Upon finding an issue, I aim to contribute by opening a
+      ticket or creating a pull request. I also maintain a Nextcloud instance
+      for my family. Since about 2021, I reduced my social media usage primarily
+      to Mastodon and Pixelfed.
     </p>
     <p>
-      Almost all of my code for personal projects is published on Github
-      with an open source license for others to find.
-      Additionally, I have a small blog to share solutions 
-      whenever a problem becomes (surprisingly) complicated.
+      Almost all of my code for personal projects is published on Github with an
+      open source license for others to find. Additionally, I have a small blog
+      to share solutions whenever a problem becomes (surprisingly) complicated.
     </p>
-    <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2">
-      <Button href="/tech" icon="mdi:code" label="Tech Blog"/>
+    <ul
+      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+    >
+      <Button href="/tech" icon="mdi:code" label="Tech Blog" />
     </ul>
   </Section>
-  
+
   <Section title="…a traveler and photographer">
     <p>
-      I love being outside, hiking or doing bike tours.
-      That's why I created a small blog to share my adventures.
+      I love being outside, hiking or doing bike tours. That's why I created a
+      small blog to share my adventures.
     </p>
-    <p>
-      If I find the time, I also post some photos in the fediverse.
-    </p>
-    
-    <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2">
-      <Button href="https://l0drex.github.io/travel" icon="mdi:web" label="Travel Blog"/>
-      <Button href="https://portfolio.pixelfed.social/lh4tography" icon="mdi:camera" label="Photography"/>
+    <p>If I find the time, I also post some photos in the fediverse.</p>
+
+    <ul
+      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+    >
+      <Button
+        href="https://l0drex.github.io/travel"
+        icon="mdi:web"
+        label="Travel Blog"
+      />
+      <Button
+        href="https://portfolio.pixelfed.social/lh4tography"
+        icon="mdi:camera"
+        label="Photography"
+      />
     </ul>
   </Section>
-  
+
   <Intro title="Get in touch!">
     <p class="max-w-lg mb-4">
-      If you want to contact me, send me an email!
-      I am not really active on linked in, but you can still find me there.
-      Also, you can take a look at my GitHub profile if you like.
+      If you want to contact me, send me an email! I am not really active on
+      linked in, but you can still find me there. Also, you can take a look at
+      my GitHub profile if you like.
     </p>
-    
-    <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row">
-      <Button href="mailto:hoffmann_lorenz@proton.me" label="Mail" icon="mdi:email"/>
-      <Button href="https://github.com/l0drex" label="GitHub" icon="mdi:github"/>
-      <Button href="https://www.linkedin.com/in/lorenz-hoffmann-316684215" label="LinkedIn" icon="mdi:linkedin"/>
-      <Button href="https://dresden.network/@l0drex" label="Mastodon" icon="mdi:mastodon"/>
-    </ul>  
+
+    <ul
+      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row"
+    >
+      <Button
+        href="mailto:hoffmann_lorenz@proton.me"
+        label="Mail"
+        icon="mdi:email"
+      />
+      <Button
+        href="https://github.com/l0drex"
+        label="GitHub"
+        icon="mdi:github"
+      />
+      <Button
+        href="https://www.linkedin.com/in/lorenz-hoffmann-316684215"
+        label="LinkedIn"
+        icon="mdi:linkedin"
+      />
+      <Button
+        href="https://dresden.network/@l0drex"
+        label="Mastodon"
+        icon="mdi:mastodon"
+      />
+    </ul>
   </Intro>
 </Layout>

@@ -4,7 +4,7 @@ date: 2025-01-02
 ---
 
 Between Christmas and new year, I decided to move my Nextcloud server to new hardware.
-The RaspberryPi-Octopus with his many external USB hard drive - tentacles was in use long enough, 
+The RaspberryPi-Octopus with his many external USB hard drive - tentacles was in use long enough,
 and it was time to upgrade.
 
 # From Docker Compose to TrueNAS
@@ -34,23 +34,28 @@ This is fairly straight forward:
 ```bash
 rsync -Aaxt ./old_data truenas_admin@truenas:/path/to/new/data
 ```
+
 I would advise to run this in `tmux`, so it can run in the background.
 I decided to not copy the whole config file. Instead, I just copied the `passwordsalt` and `secret` values.
 
 # Converting the database
 
 I created a new database using `docker` and exposed the port to the host.
+
 ```bash
 docker pull postgres
 docker run --name some-postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
 ```
 
 Now, there are two ways I found to move the data:
+
 1. Using `occ db:convert-type`. This was command was currently broken and disabled by the devs.
-   Basically create a docker network, connect the db and nextcloud app containers to that network and run the command. 
+   Basically create a docker network, connect the db and nextcloud app containers to that network and run the command.
 2. Using `pgloader`, as explained below.
 
-In the postgres shell, I created the database for nextcloud with the same username and credentials as used in the TrueNAS app.
+In the postgres shell, I created the database for nextcloud with the same username and credentials as used in the
+TrueNAS app.
+
 ```sql
 CREATE DATABASE nextcloud;
 CREATE USER nextclouduser WITH PASSWORD 'password';
@@ -59,6 +64,7 @@ ALTER DATABASE nextcloud OWNER TO nextcloud;
 ```
 
 I then put nextcloud into maintenance mode and finally moved the data from the mysql database to postgres:
+
 ```bash
 # activate maintenance mode
 docker exec -t --user www-data nextcloud-docker-app-1 php occ maintenance:mode --on
@@ -77,11 +83,13 @@ rsync ./backup.bak truenas_admin@truenas:/mnt/path/NextcloudPostgres/backup.bak
 ```
 
 Now on the TrueNAS system, change the owner of the db dump:
+
 ```bash
 chown netdata:docker backup.bak
 ```
 
 Finally, restore the backup. Put nextcloud on TrueNAS into maintenance mode, then connect to the postgres shell and run:
+
 ```bash
 psql -h localhost -U nextcloud -d template1 -c "DROP DATABASE \"nextcloud\";"
 psql -h localhost -U nextcloud -d template1 -c "CREATE DATABASE \"nextcloud\";"
@@ -92,13 +100,16 @@ The tables inside the container needed some ownership changes, which I did with 
 
 # Getting new certificates
 
-I registered my domain at Porkbun, so I needed a 3rd party script in order to request a certificate using the TrueNAS UI.
+I registered my domain at Porkbun, so I needed a 3rd party script in order to request a certificate using the TrueNAS
+UI.
 However, this script didn't work, as the path to the script had spaces inside. After I found that out,
 I successfully got a certificate and selected that in the Nextcloud app.
 
-I then install the `nginx` proxy manager app and set up my domains. I changed the ports of the TrueNAS webui to something else
+I then install the `nginx` proxy manager app and set up my domains. I changed the ports of the TrueNAS webui to
+something else
 and exposed nginx on `80` and `443`.
 Now I needed certificates in nginx. I added my domain to the hosts file for that (inside the nginx app):
+
 ```bash
 echo "192.168.0.x  example.com" >> /etc/hosts
 ```

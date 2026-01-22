@@ -1,21 +1,23 @@
 ---
-import colors from "../../languageColors.json"
+import colors from "../../languageColors.json";
 import { dateFormatter } from "@utils/general";
 
 interface Props {
-  project: any,
-  href: string
+  project: any;
+  href: string;
 }
 
-const {project, href} = Astro.props;
+const { project, href } = Astro.props;
 
-const lang = project.languages?.at(0) ?? '';
+const lang = project.languages?.at(0) ?? "";
 
 let color: string = project.color ?? "white";
 ---
 
-<li class="bg-[var(--theme)] rounded-2xl p-4 w-96 h-48 shrink-0 shadow-lg select-none">
-  <a href={href} class=" flex flex-col justify-between h-full">
+<li
+  class="bg-[var(--theme)] rounded-2xl p-4 w-96 h-48 shrink-0 shadow-lg select-none"
+>
+  <a href={href} class="flex flex-col justify-between h-full">
     <h2 class="text-2xl font-black mb-1">{project.title}</h2>
     <p class="flex-grow">
       {project.description}
@@ -27,5 +29,4 @@ let color: string = project.color ?? "white";
   </a>
 </li>
 
-<style define:vars={{theme: color}}>
-</style>
+<style define:vars={{ theme: color }}></style>

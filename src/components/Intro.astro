@@ -1,14 +1,18 @@
 ---
 interface Props {
-    title: string;
-    font?: string;
+  title: string;
+  font?: string;
 }
 
-const {title, font} = Astro.props;
-
+const { title, font } = Astro.props;
 ---
 
-<h1 class={"mt-8 text-center font-extrabold text-4xl mb-3 sm:text-5xl " + (font || "")}>{title}</h1>
+<h1
+  class={"mt-8 text-center font-extrabold text-4xl mb-3 sm:text-5xl " +
+    (font || "")}
+>
+  {title}
+</h1>
 <p class="mx-auto mb-8 max-w-lg text-center">
-    <slot/>
+  <slot />
 </p>

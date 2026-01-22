@@ -1,5 +1,5 @@
 export enum ProjectType {
-  WORK = 'work',
-  UNI = 'university',
-  HOBBY = 'hobby'
+  WORK = "work",
+  UNI = "university",
+  HOBBY = "hobby",
 }

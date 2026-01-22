@@ -3,8 +3,8 @@ title: AR Geometry
 type: work
 description: Augmented reality application for Meta Quest devices that teaches geometric projections to university students.
 date: 2024-04-09
-languages: ["C#"]
-tools: ["Unity", "ViewR"]
+languages: [ "C#" ]
+tools: [ "Unity", "ViewR" ]
 sourceCode: "https://github.com/easonwong-de/Adaptive-Tab-Bar-Colour"
 url: "https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/"
 small: false

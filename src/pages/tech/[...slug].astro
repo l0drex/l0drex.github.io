@@ -1,34 +1,40 @@
 ---
 import { getCollection, CollectionEntry } from "astro:content";
-import MarkdownPostLayout from '@layouts/BlogPost.astro';
+import MarkdownPostLayout from "@layouts/BlogPost.astro";
 import Layout from "@layouts/ContentLayout.astro";
 import Button from "@components/Button.astro";
 
 export async function getStaticPaths() {
-  const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 
-  return posts.map(entry => ({
-    params: {slug: entry.slug},
-    props: {entry}
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 interface Props {
-  entry: CollectionEntry<'blog'>
+  entry: CollectionEntry<"blog">;
 }
 
-const {entry} = Astro.props;
-const {Content} = await entry.render();
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 const projectUrl = "/projects/" + entry.data.project?.slug;
 ---
 
 <Layout title={entry.data.title}>
-    <MarkdownPostLayout frontmatter={entry.data}>
-        <Content/>
-        <div slot="references" id="links" class="text-center my-8">
-          {entry.data.project && (
-                  <Button href={projectUrl} icon="mdi:package" label="Related project"/>
-          )}
-        </div>
-    </MarkdownPostLayout>
+  <MarkdownPostLayout frontmatter={entry.data}>
+    <Content />
+    <div slot="references" id="links" class="text-center my-8">
+      {
+        entry.data.project && (
+          <Button
+            href={projectUrl}
+            icon="mdi:package"
+            label="Related project"
+          />
+        )
+      }
+    </div>
+  </MarkdownPostLayout>
 </Layout>

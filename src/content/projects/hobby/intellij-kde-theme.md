@@ -5,7 +5,7 @@ description: Brings the default theme of KDE to Intellij IDEs
 date: 2021-03-13
 color: "#EFF0F1"
 colorDark: "#31373C"
-languages: ["JSON"]
+languages: [ "JSON" ]
 sourceCode: "https://github.com/l0drex/Intellij-KDE-Breeze-Theme"
 url: "https://plugins.jetbrains.com/plugin/16605-kde-breeze-theme"
 ---

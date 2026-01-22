@@ -4,8 +4,8 @@ date: 2024-07-12
 project: "university/retro-reboot"
 ---
 
-During a university project, I had the task to build a drum machine. 
-The concept is fairly simple: I have a two-dimensional array of booleans. 
+During a university project, I had the task to build a drum machine.
+The concept is fairly simple: I have a two-dimensional array of booleans.
 I read the columns in the array one by one, with some constant wait time between them.
 Each row is mapped to a sample, and when the value is `true`, I play the sample.
 
@@ -57,7 +57,7 @@ def update(index: int):
 # ...
 ```
 
-This was more performant, **but** I still could only play one sound at once. 
+This was more performant, **but** I still could only play one sound at once.
 
 # Third iteration
 
