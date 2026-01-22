@@ -5,6 +5,7 @@ description: Travel blog featuring interactive maps
 date: 2024-08-01
 languages: ["Astro", "Vue", "GLSL"]
 url: "https://l0drex.github.io/travel"
+sourceCode: "https://github.com/l0drex/travel"
 color: "#FFEDD4"
 colorDark: "#0B0908"
 small: false
@@ -13,6 +14,8 @@ small: false
 I am often travelling around the world with my bicycle or on foot.
 Lots of memories are created, and I always wanted to share them. Some blog, with a map and some pictures.
 In August 2024, I finally started building it.
+
+![Screenshot of the the map, elevation profile and statistics](@assets/projects/travel-map.png)
 
 Since it's just a simple blog, I decided to make use Astro for most of it, plus some Vue components for the map.
 This was fairly simple, as I could just load my GPX files into a leaflet layer and be done.
@@ -31,3 +34,5 @@ The result is a 3D globe with matching colors fading out from and back into tran
 
 The rotation is heavily inspired by the green [_"Trackmania - Nations Forever"_](https://www.youtube.com/watch?v=4_MD9DbssIw) menu screen. It simulates the rotation
 of earth around the sun, with a tilted axis.
+
+![Screenshot of the home page with the globe](@assets/projects/travel-home.png)
