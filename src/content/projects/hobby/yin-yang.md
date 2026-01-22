@@ -15,3 +15,5 @@ It was originally created by Oskar Schachtschneider. I found his project really 
 ![](@assets/projects/yin-yang.png)
 
 I also built an extension for Firefox that allows users to select themes for light and dark mode.
+
+I am now the maintainer of the project and mainly review pull requests, manage issues, and update the dependencies.

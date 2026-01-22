@@ -6,6 +6,7 @@ date: 2024-01-08
 languages: ["C#"]
 tools: ['Unity', 'ViewR']
 small: false
+color: "#c1d0f5"
 ---
 
 This is the project of my Bachelor thesis. I explored different techniques to move multiple people at once, 

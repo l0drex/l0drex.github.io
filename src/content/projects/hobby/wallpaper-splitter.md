@@ -6,7 +6,7 @@ date: 2021-09-23
 languages: ["C++"]
 tools: ["Qt", "Qt Widgets"]
 sourceCode: "https://github.com/l0drex/WallpaperSplitter"
-small: false
+color: "#e8d9ffff"
 ---
 
 ![](@assets/projects/wallpaper-splitter.png)

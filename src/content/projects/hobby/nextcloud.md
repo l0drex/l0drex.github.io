@@ -13,3 +13,5 @@ I am running my personal instance of Nextcloud on a Raspberry Pi.
 It's used by me and my family to store backups, share photos, plan events, store contacts, calendars and much more.
 
 Maintaining it means doing regular updates, backups and initially setting the Docker container up.
+
+Meanwhile, I migrated to new hardware: an old desktop PC with additional storage and TrueNAS.
