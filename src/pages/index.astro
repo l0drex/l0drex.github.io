@@ -7,7 +7,9 @@ import ProjectSection from "@components/projects/ProjectSection.astro";
 import Section from "@components/Section.astro";
 ---
 
-<Layout title="/home/" background="#f9fafb" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
+<Layout title="/home/" background="white" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
+  <div slot="background" class="w-full h-full bg-radial from-white to-gray-200"/>
+  
   <Intro title="Who is Lorenz?"></Intro>
 
   <ProjectSection title="…a student" type={ProjectType.UNI}>
