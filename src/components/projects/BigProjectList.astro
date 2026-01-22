@@ -1,7 +1,7 @@
 ---
+import { ProjectType } from "@utils/projects.ts";
 import { getCollection, type CollectionEntry } from "astro:content";
-import SmallProjectItem from "@components/projects/SmallProjectItem.astro";
-import { ProjectType } from "@utils/projects";
+import BigProjectItem from "@components/projects/BigProjectItem.astro";
 
 interface Props {
   limit?: number;
@@ -13,7 +13,7 @@ const {limit, type} = Astro.props;
 const collection: CollectionEntry<"projects">[] = await getCollection('projects');
 let projects = collection
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .filter(p => p.data.type === type && p.data.small);
+  .filter(p => p.data.type === type && !p.data.small);
 
 if (limit != null) {
   projects = projects.filter((r, i) => i < limit);
@@ -22,7 +22,7 @@ if (limit != null) {
 
 <ul class="flex gap-4 p-2 justify-between overflow-x-auto max-w-full pb-4
 md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense">
-  {projects.map(p => 
-          <SmallProjectItem project={p.data} href={'/projects/' + p.slug} />
+  {projects.map(p =>
+    <BigProjectItem project={p.data} href={'/projects/' + p.slug} />
   )}
 </ul>

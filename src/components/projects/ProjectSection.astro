@@ -1,6 +1,8 @@
 ---
 import {ProjectType} from "@utils/projects";
 import SmallProjectList from "./SmallProjectList.astro";
+import BigProjectItem from "@components/projects/BigProjectItem.js";
+import BigProjectList from "@components/projects/BigProjectList.astro";
 
 interface Props {
     title: string;
@@ -14,5 +16,6 @@ const { title, type } = Astro.props;
 <section class="max-w-2xl mx-auto mb-8">
     <h2 class="font-bold text-lg mb-2">{title}</h2>
     <slot/>
+    <BigProjectList type={type} />
     <SmallProjectList type={type} />
 </section>
