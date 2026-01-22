@@ -15,7 +15,7 @@ let {title, background, backgroundDark, color, colorDark} = Astro.props;
 ---
 
 <BaseLayout title={title} background={background} color={color} backgroundDark={backgroundDark} colorDark={colorDark}>
-    <header class="fixed w-full">
+    <header class="fixed w-full z-10">
         <nav class="flex gap-8 justify-center shadow-lg">
             <NavElement href="/" icon="mdi:home" label="Home"/>
             <NavElement href="/projects" icon="mdi:package" label="Projects"/>
