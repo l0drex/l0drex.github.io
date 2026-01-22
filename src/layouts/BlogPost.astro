@@ -1,6 +1,6 @@
 ---
 import { dateFormatter } from "../utils/general";
-import JourneyType from "@components/TypeIcon.astro";
+import TypeIcon from "@components/TypeIcon.astro";
 import Intro from "../components/Intro.astro";
 import "@styles/markdown.css";
 
@@ -11,7 +11,8 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 
 <Intro title={frontmatter.title}>
     <span class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
-        {(<JourneyType type={frontmatter.type} />)}
+        <TypeIcon type={frontmatter.type} />
+        {frontmatter.type}
         {(frontmatter.type && date) && "·"}
         <span>{date}</span>
     </span>
