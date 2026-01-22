@@ -20,8 +20,7 @@ if (limit != null) {
 }
 ---
 
-<ul class="flex gap-4 p-2 justify-between overflow-x-auto max-w-full pb-4
-md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense">
+<ul class="flex gap-4 p-2 overflow-x-auto w-full pb-4 justify-around">
   {projects.map(p =>
     <BigProjectItem project={p.data} href={'/projects/' + p.slug} />
   )}
