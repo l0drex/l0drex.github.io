@@ -2,18 +2,51 @@
 import Layout from "@layouts/ContentLayout.astro";
 import Intro from "@components/Intro.astro";
 import Button from "@components/Button.astro";
+import { ProjectType } from "@utils/projects.ts";
+import ProjectSection from "@components/projects/ProjectSection.astro";
 ---
 
 <Layout title="/home/" background="#f9fafb" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
-    <Intro title="Welcome to my Homepage!">
-        I am a master student of media computer science in Dresden, Germany. My
-        study focuses on Virtual and Augmented Reality.
-    </Intro>
+  <Intro title="Who is Lorenz?"></Intro>
+
+  <ProjectSection title="…a student" type={ProjectType.UNI}>
+    <p>
+      I am currently studying Master of Media Computer Science (Medieninformatik)
+      at the Technical University of Dresden.
+      During my time at the university, a learned a lot of things around 
+      computers and how we humans can interact and work with them.
+      Here are some of the projects developed:
+    </p>
+  </ProjectSection>
+  
+  <ProjectSection title="…a developer and tutor" type={ProjectType.WORK}>
+    <p>
+      Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden.
+      Our research is focused on the application of augmented reality in psychology, teaching and architecture.
+      You can read more about us <a href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a>.
+    </p>
+    <p>Here are some of the projects where I was involved with:</p>
+  </ProjectSection>
+
+  <ProjectSection title="…a creative mind solving problems" type={ProjectType.HOBBY}>
+    <p>
+      During my free time, I also created some projects on my own.
+      These were for learning purposes, to solve a specific problem I had or just for fun.
+    </p>
+  </ProjectSection>
+  
+  <Intro title="Get in touch!">
+    <p class="max-w-lg mb-4">
+      If you want to contact me, send me an email!
+      I am not really active on linked in, but you can still find me there.
+      Also, you can take a look at my GitHub profile if you like.
+    </p>
     
     <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row">
-        <Button href="https://github.com/l0drex" label="GitHub" icon="mdi:github"/>
-        <Button href="https://www.linkedin.com/in/lorenz-hoffmann-316684215" label="LinkedIn" icon="mdi:linkedin"/>
-        <Button href="https://dresden.network/@l0drex" label="Mastodon" icon="mdi:mastodon"/>
-        <Button href="mailto:hoffmann_lorenz@proton.me" label="Mail" icon="mdi:email"/>
-    </ul>
+      <Button href="mailto:hoffmann_lorenz@proton.me" label="Mail" icon="mdi:email"/>
+      <Button href="https://github.com/l0drex" label="GitHub" icon="mdi:github"/>
+      <Button href="https://www.linkedin.com/in/lorenz-hoffmann-316684215" label="LinkedIn" icon="mdi:linkedin"/>
+      <Button href="https://dresden.network/@l0drex" label="Mastodon" icon="mdi:mastodon"/>
+    </ul>  
+  </Intro>
 </Layout>
