@@ -4,6 +4,7 @@ import Intro from "@components/Intro.astro";
 import Button from "@components/Button.astro";
 import { ProjectType } from "@utils/projects.ts";
 import ProjectSection from "@components/projects/ProjectSection.astro";
+import Section from "@components/Section.astro";
 ---
 
 <Layout title="/home/" background="#f9fafb" color="#111827" backgroundDark="#111827" colorDark="#f3f4f6">
@@ -34,6 +35,37 @@ import ProjectSection from "@components/projects/ProjectSection.astro";
       These were for learning purposes, to solve a specific problem I had or just for fun.
     </p>
   </ProjectSection>
+  
+  <Section title="…a believer in open source software">
+    <p>
+      We as humans should work together instead of against each other.
+      If we find a solution to a common problem, 
+      we should make that solution available to everyone.
+      I publish almost of all of my personal projects publicly on Github 
+      with an open source license for others to find.
+    </p>
+    <p>
+      All of my PCs use a Linux distribution and 
+      I am mainly relying on open source software.
+      Upon finding an issue, I aim to contribute by opening a ticket or creating a pull request. 
+      I also maintain a Nextcloud instance for my family.
+    </p>
+  </Section>
+  
+  <Section title="…a traveler and photographer">
+    <p>
+      I love being outside, hiking or doing bike tours.
+      That's why I created a small blog to share my adventures.
+    </p>
+    <p>
+      If I find the time, I also post some photos in the fediverse.
+    </p>
+    
+    <ul class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2">
+      <Button href="https://l0drex.github.io/travel" icon="mdi:web" label="Travel Blog"/>
+      <Button href="https://portfolio.pixelfed.social/lh4tography" icon="mdi:camera" label="Travel Blog"/>
+    </ul>
+  </Section>
   
   <Intro title="Get in touch!">
     <p class="max-w-lg mb-4">
