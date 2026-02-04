@@ -1,9 +1,10 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import colors from "../../languageColors.json";
 import { dateFormatter } from "@utils/general";
 
 interface Props {
-  project: any;
+  project: CollectionEntry<"projects">;
   href: string;
 }
 
@@ -25,13 +26,15 @@ if (lang === "C++") {
 
 <li
   class="flex-shrink-0 w-52 h-50 rounded-xl py-1 px-1 mb-4
-bg-white shadow-md select-none"
+bg-white dark:bg-gray-700 shadow-md select-none"
 >
   <a
     href={href}
     class="flex flex-col h-full hover:no-underline justify-between"
   >
-    <div class="flex justify-between my-1 mx-2 text-gray-500">
+    <div
+      class="flex justify-between my-1 mx-2 text-gray-500 dark:text-gray-300"
+    >
       <div class="m-0">{lang}</div>
       <div class="m-0">{dateFormatter(project.date, true)}</div>
     </div>

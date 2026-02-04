@@ -1,8 +1,9 @@
 ---
 import { dateFormatter } from "@utils/general";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  project: any;
+  project: CollectionEntry<"projects">["data"];
   href: string;
 }
 
@@ -10,22 +11,23 @@ const { project, href } = Astro.props;
 
 const lang = project.languages?.at(0) ?? "";
 
-let color: string = project.color ?? "white";
+const color: string = project.color ?? "white";
+const colorDark: string = project.colorDark ?? "oklch(37.3% 0.034 259.733)";
 ---
 
 <li
-  class="bg-[var(--theme)] rounded-2xl p-4 w-96 h-48 shrink-0 shadow-lg select-none"
+  class="bg-(--color) dark:bg-(--colorDark) rounded-2xl p-4 w-96 h-48 shrink-0 shadow-lg select-none"
 >
   <a href={href} class="flex flex-col justify-between h-full">
     <h2 class="text-2xl font-black mb-1">{project.title}</h2>
     <p class="flex-grow">
       {project.description}
     </p>
-    <div class="flex justify-between text-gray-500">
+    <div class="flex justify-between text-gray-500 dark:text-gray-300">
       <div class="m-0">{lang}</div>
       <div class="m-0">{dateFormatter(project.date, true)}</div>
     </div>
   </a>
 </li>
 
-<style define:vars={{ theme: color }}></style>
+<style define:vars={{ color, colorDark }}></style>
