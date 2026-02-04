@@ -1,27 +1,19 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import colors from "../../languageColors.json";
 import { dateFormatter } from "@utils/general";
+import LanguageTag from "./LanguageTag.astro";
 
 interface Props {
-  project: CollectionEntry<"projects">;
+  project: CollectionEntry<"projects">["data"];
   href: string;
 }
 
 const { project, href } = Astro.props;
 
+const color: string = project.color ?? "oklch(81.1% 0.111 293.571)";
+const colorDark: string = project.colorDark ?? "oklch(35.9% 0.144 278.697)";
+
 const lang = project.languages?.at(0) ?? "";
-
-const fallbackColor = "#646464";
-let color: string = fallbackColor;
-if (lang != null && lang in colors) {
-  color = colors[lang as keyof typeof colors]?.color ?? fallbackColor;
-}
-
-// quick fix
-if (lang === "C++") {
-  color = colors["C++"].color;
-}
 ---
 
 <li
@@ -35,18 +27,18 @@ bg-white dark:bg-gray-700 shadow-md select-none"
     <div
       class="flex justify-between my-1 mx-2 text-gray-500 dark:text-gray-300"
     >
-      <div class="m-0">{lang}</div>
+      <LanguageTag lang={lang} />
       <div class="m-0">{dateFormatter(project.date, true)}</div>
     </div>
     <p class="px-2 rounded-md">
       {project.description}
     </p>
     <h2
-      class="font-extrabold mx-auto px-4 whitespace-nowrap text-center bg-[var(--theme)] rounded-lg py-2 text-lg text-white relative top-4"
+      class="font-extrabold mx-auto px-4 whitespace-nowrap text-center bg-(--color) dark:bg-(--colorDark) rounded-lg py-2 text-lg relative top-4"
     >
       {project.title}
     </h2>
   </a>
 </li>
 
-<style define:vars={{ theme: color }}></style>
+<style define:vars={{ color, colorDark }}></style>

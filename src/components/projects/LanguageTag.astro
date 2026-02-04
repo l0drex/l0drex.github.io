@@ -1,0 +1,26 @@
+---
+import colors from "../../languageColors.json";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+const fallbackColor = "#646464";
+let langColor: string = fallbackColor;
+if (lang != null && lang in colors) {
+  langColor = colors[lang as keyof typeof colors]?.color ?? fallbackColor;
+}
+
+// quick fix
+if (lang === "C++") {
+  langColor = colors["C++"].color;
+}
+---
+
+<div class="m-0 bg-(--langColor)/50 px-2 rounded-sm">
+  {lang}
+</div>
+
+<style define:vars={{ langColor }}></style>
