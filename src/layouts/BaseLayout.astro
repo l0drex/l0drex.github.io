@@ -38,7 +38,9 @@ colorDark ??= "white";
     <title>{title}</title>
   </head>
 
-  <body class="flex flex-col justify-between min-h-screen font-sans">
+  <body
+    class="flex flex-col justify-between min-h-screen font-sans max-w-screen overflow-x-auto"
+  >
     <slot />
   </body>
 </html>

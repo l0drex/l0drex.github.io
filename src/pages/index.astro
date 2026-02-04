@@ -20,7 +20,12 @@ import Section from "@components/Section.astro";
   >
   </div>
 
-  <Intro title="Who is Lorenz?" />
+  <h1 class="mt-8 text-center font-extrabold text-4xl mb-15 sm:text-5xl">
+    Who is <span
+      class="bg-linear-to-r bg-clip-text text-transparent to-indigo-400 from-cyan-400"
+      >Lorenz</span
+    >?
+  </h1>
 
   <ProjectSection title="…a student" type={ProjectType.UNI}>
     <p>
@@ -72,7 +77,7 @@ import Section from "@components/Section.astro";
       to share solutions whenever a problem becomes (surprisingly) complicated.
     </p>
     <ul
-      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row mt-2"
     >
       <Button href="/tech" icon="mdi:code" label="Tech Blog" />
     </ul>
@@ -86,7 +91,7 @@ import Section from "@components/Section.astro";
     <p>If I find the time, I also post some photos in the fediverse.</p>
 
     <ul
-      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row mt-2"
     >
       <Button
         href="https://l0drex.github.io/travel"
@@ -109,7 +114,7 @@ import Section from "@components/Section.astro";
     </p>
 
     <ul
-      class="flex list-none gap-4 justify-center items-center flex-col sm:flex-row"
+      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row"
     >
       <Button
         href="mailto:hoffmann_lorenz@proton.me"
