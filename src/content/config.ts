@@ -8,19 +8,21 @@ const blogBase = {
 
 const projectCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    ...blogBase,
-    description: z.string(),
-    type: z.nativeEnum(ProjectType),
-    color: z.optional(z.string()),
-    colorDark: z.optional(z.string()),
-    languages: z.array(z.string()),
-    tools: z.optional(z.array(z.string())),
-    sourceCode: z.optional(z.string().url()),
-    url: z.optional(z.string().url()),
-    external: z.optional(z.string().url()),
-    small: z.optional(z.boolean()).default(true),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      ...blogBase,
+      description: z.string(),
+      type: z.nativeEnum(ProjectType),
+      color: z.optional(z.string()),
+      colorDark: z.optional(z.string()),
+      languages: z.array(z.string()),
+      tools: z.optional(z.array(z.string())),
+      sourceCode: z.optional(z.string().url()),
+      url: z.optional(z.string().url()),
+      external: z.optional(z.string().url()),
+      small: z.optional(z.boolean()).default(true),
+      image: z.optional(image()),
+    }),
 });
 
 const blogCollection = defineCollection({

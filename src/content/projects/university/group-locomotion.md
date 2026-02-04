@@ -7,6 +7,7 @@ languages: [ "C#" ]
 tools: [ 'Unity', 'ViewR' ]
 small: false
 color: "#c1d0f5"
+image: "@assets/projects/group-locomotion.png"
 ---
 
 This is the project of my Bachelor thesis. I explored different techniques to move multiple people at once,

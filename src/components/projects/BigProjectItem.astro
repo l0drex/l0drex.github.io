@@ -2,6 +2,7 @@
 import { dateFormatter } from "@utils/general";
 import type { CollectionEntry } from "astro:content";
 import LanguageTag from "./LanguageTag.astro";
+import Image from "astro/components/Image.astro";
 
 interface Props {
   project: CollectionEntry<"projects">["data"];
@@ -17,9 +18,29 @@ const lang = project.languages?.at(0) ?? "";
 ---
 
 <li
-  class="bg-(--color) dark:bg-(--colorDark) rounded-2xl p-4 w-80 h-48 shrink-0 shadow-lg select-none"
+  class="bg-(--color) dark:bg-(--colorDark) rounded-2xl w-80 h-48 shrink-0 shadow-lg select-none flex relative overflow-hidden"
 >
-  <a href={href} class="flex flex-col justify-between h-full">
+  {
+    project.image && (
+      <div class="absolute inset-0 z-0">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={640}
+          height={384}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    )
+  }
+
+  <a
+    href={href}
+    class:list={[
+      "flex flex-col justify-between size-full relative p-4 opacity-100 bg-(--color)/60 dark:bg-(--colorDark)/70 backdrop-blur-sm",
+      project.image ? "hover:opacity-50  transition-opacity duration-250" : "",
+    ]}
+  >
     <h2 class="text-2xl font-black mb-1">{project.title}</h2>
     <p class="grow">
       {project.description}

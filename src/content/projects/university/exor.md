@@ -8,6 +8,7 @@ languages: ["C#"]
 tools: ["Unity"]
 external: https://ms-wissenschaft.de/en/
 small: false
+image: "@assets/projects/exor.png"
 ---
 
 We developed a 3D game in Unity where you can

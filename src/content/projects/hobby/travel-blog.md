@@ -9,6 +9,7 @@ sourceCode: "https://github.com/l0drex/travel"
 color: "#FFEDD4"
 colorDark: "#0B0908"
 small: false
+image: "@assets/projects/travel-map.png"
 ---
 
 I am often travelling around the world with my bicycle or on foot.

@@ -10,6 +10,7 @@ tools: [ "react", "d3js", "webcola", "GedcomX" ]
 sourceCode: "https://github.com/l0drex/family-tree"
 url: "https://l0drex.github.io/family-tree/"
 small: false
+image: "@assets/projects/family-tree.png"
 ---
 
 I built this website because I wanted a privacy-focused way of sharing a family tree.
