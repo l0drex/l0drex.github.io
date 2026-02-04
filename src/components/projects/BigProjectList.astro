@@ -17,7 +17,7 @@ let projects = collection
   .filter((p) => p.data.type === type && !p.data.small);
 
 if (limit != null) {
-  projects = projects.filter((r, i) => i < limit);
+  projects = projects.filter((_, i) => i < limit);
 }
 ---
 
