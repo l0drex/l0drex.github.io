@@ -6,7 +6,6 @@ date: 2024-06-06
 color: '#ffffa2'
 languages: [ "Python" ]
 tools: [ "OpenCV" ]
-small: false
 ---
 
 _Retro Reboot_ is an exhibit for the exhibition _Data Spaces_ in our university.
