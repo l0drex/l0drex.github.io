@@ -10,7 +10,7 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 ---
 
 <Intro title={frontmatter.title}>
-  <span class="text-center mb-8 text-2xl sm:text-3xl inline-flex gap-2">
+  <span class="text-center text-2xl sm:text-3xl inline-flex gap-2">
     <TypeIcon type={frontmatter.type} />
     {frontmatter.type}
     {frontmatter.type && date && "·"}

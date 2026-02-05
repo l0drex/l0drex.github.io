@@ -28,15 +28,20 @@ const { Content } = await entry.render();
   backgroundDark={entry.data.colorDark}
 >
   <MarkdownPostLayout frontmatter={entry.data}>
-    <div class="flex flex-wrap justify-center gap-4 p-2" slot="details">
-      <div>
+    <div class="grid grid-cols-[auto_auto] gap-4 p-2 mb-10" slot="details">
+      <div class="text-right">
         languages:
+      </div>
+      <div>
         <TagList tags={entry.data.languages} />
       </div>
+
       {
         entry.data.tools && (
-          <div>
+          <div class="text-right">
             tools:
+          </div>
+          <div>
             <TagList tags={entry.data.tools} />
           </div>
         )
