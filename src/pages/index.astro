@@ -5,6 +5,7 @@ import Button from "@components/Button.astro";
 import { ProjectType } from "@utils/projects.ts";
 import ProjectSection from "@components/projects/ProjectSection.astro";
 import Section from "@components/Section.astro";
+import Text from "@components/Text.astro";
 ---
 
 <Layout
@@ -28,54 +29,53 @@ import Section from "@components/Section.astro";
   </h1>
 
   <ProjectSection title="…a student" type={ProjectType.UNI}>
-    <p>
+    <Text>
       I am currently studying Master of Media Computer Science
       (Medieninformatik) at the Technical University of Dresden. During my time
       at the university, a learned a lot of things around computers and how we
       humans can interact and work with them. Here are some of the projects
       developed:
-    </p>
+    </Text>
   </ProjectSection>
 
   <ProjectSection title="…a developer and tutor" type={ProjectType.WORK}>
-    <p>
+    <Text>
       Since 2022, I am a student worker (SHK) at the IXLAB in TU Dresden. Our
       research is focused on the application of augmented reality in psychology,
-      teaching and architecture. You can read more about us <a
-        href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/">here</a
-      >.
-    </p>
-    <p>Here are some of the projects where I was involved with:</p>
+      teaching and architecture. You can read more about us
+      <a href="https://tu-dresden.de/ing/informatik/smt/im/ixlab/"> here </a>.
+    </Text>
+    <Text>Here are some of the projects where I was involved with:</Text>
   </ProjectSection>
 
   <ProjectSection
     title="…a creative mind solving problems"
     type={ProjectType.HOBBY}
   >
-    <p>
+    <Text>
       During my free time, I also created some projects on my own. These were
       for learning purposes, to solve a specific problem I had or just for fun.
-    </p>
+    </Text>
   </ProjectSection>
 
   <Section title="…a believer in open source software">
-    <p>
+    <Text>
       We as humans should work together instead of against each other. If we
       find a solution to a common problem, we should make that solution
       available to everyone.
-    </p>
-    <p>
+    </Text>
+    <Text>
       All of my PCs use a Linux distribution and I am mainly relying on open
       source software. Upon finding an issue, I aim to contribute by opening a
       ticket or creating a pull request. I also maintain a Nextcloud instance
       for my family. Since about 2021, I reduced my social media usage primarily
       to Mastodon and Pixelfed.
-    </p>
-    <p>
+    </Text>
+    <Text>
       Almost all of my code for personal projects is published on Github with an
       open source license for others to find. Additionally, I have a small blog
       to share solutions whenever a problem becomes (surprisingly) complicated.
-    </p>
+    </Text>
     <ul
       class="mt-2 flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
     >
@@ -84,11 +84,11 @@ import Section from "@components/Section.astro";
   </Section>
 
   <Section title="…a traveler and photographer">
-    <p>
+    <Text>
       I love being outside, hiking or doing bike tours. That's why I created a
       small blog to share my adventures.
-    </p>
-    <p>If I find the time, I also post some photos in the fediverse.</p>
+    </Text>
+    <Text>If I find the time, I also post some photos in the fediverse.</Text>
 
     <ul
       class="mt-2 flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
@@ -107,11 +107,11 @@ import Section from "@components/Section.astro";
   </Section>
 
   <Intro title="Get in touch!">
-    <p class="mb-4 max-w-lg px-4">
+    <Text>
       If you want to contact me, send me an email! I am not really active on
       linked in, but you can still find me there. Also, you can take a look at
       my GitHub profile if you like.
-    </p>
+    </Text>
 
     <ul
       class="flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
