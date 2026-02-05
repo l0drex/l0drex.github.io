@@ -2,7 +2,6 @@
 import { dateFormatter } from "../utils/general";
 import TypeIcon from "@components/TypeIcon.astro";
 import Intro from "../components/Intro.astro";
-import "@styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 
@@ -20,7 +19,9 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 
 <slot name="details" />
 
-<article class="mx-auto content max-w-3xl">
+<article
+  class="mx-auto max-w-3xl prose dark:prose-invert prose-img:rounded-lg prose-img:shadow-lg prose-img:mx-auto prose-li:marker:text-gray-500"
+>
   <slot />
 </article>
 
