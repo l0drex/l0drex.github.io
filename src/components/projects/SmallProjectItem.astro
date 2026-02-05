@@ -16,23 +16,17 @@ const colorDark: string = project.colorDark ?? "oklch(35.9% 0.144 278.697)";
 const lang = project.languages?.at(0) ?? "";
 ---
 
-<li
-  class="relative mb-4 h-50 w-52 shrink-0 rounded-xl px-1 py-1 shadow-md select-none"
->
+<li class="relative mb-4 h-50 w-52 shrink-0 rounded-xl shadow-md select-none">
   <div class="absolute inset-0 -z-10">
     <div
       class="absolute inset-0 size-full rounded-xl bg-white object-cover dark:bg-gray-700"
-    >
-    </div>
-    <div
-      class="absolute inset-0 size-full rounded-xl bg-linear-to-t from-(--color)/20 from-10% to-transparent to-60% object-cover dark:from-(--colorDark)/40"
     >
     </div>
   </div>
 
   <a
     href={href}
-    class="flex h-full flex-col justify-between hover:no-underline"
+    class="flex h-full flex-col justify-between bg-linear-to-t from-(--color)/20 from-10% to-transparent to-60% object-cover p-1 hover:from-(--color)/40 hover:to-(--color)/10 hover:to-80% dark:from-(--colorDark)/40 hover:dark:from-(--colorDark)/60 hover:dark:to-(--colorDark)/20"
   >
     <div
       class="mx-2 my-1 flex justify-between text-gray-500 dark:text-gray-300"
