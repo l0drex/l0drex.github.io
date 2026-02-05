@@ -25,7 +25,7 @@ const projectUrl: string = entry.data.project?.id ?? "";
 <Layout title={entry.data.title}>
   <MarkdownPostLayout frontmatter={entry.data}>
     <Content />
-    <div slot="references" id="links" class="text-center my-8">
+    <div slot="references" id="links" class="my-8 text-center">
       {
         entry.data.project && (
           <Button

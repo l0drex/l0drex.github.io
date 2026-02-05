@@ -32,19 +32,19 @@ const lang = project.languages?.at(0) ?? "";
 
   <a
     href={href}
-    class="flex flex-col h-full hover:no-underline justify-between"
+    class="flex h-full flex-col justify-between hover:no-underline"
   >
     <div
-      class="flex justify-between my-1 mx-2 text-gray-500 dark:text-gray-300"
+      class="mx-2 my-1 flex justify-between text-gray-500 dark:text-gray-300"
     >
       <LanguageTag lang={lang} />
       <div class="m-0">{dateFormatter(project.date, true)}</div>
     </div>
-    <p class="px-2 rounded-md">
+    <p class="rounded-md px-2">
       {project.description}
     </p>
     <h2
-      class="font-extrabold mx-auto px-4 whitespace-nowrap text-center bg-(--color) dark:bg-(--colorDark) rounded-lg py-2 text-lg relative top-4"
+      class="relative top-4 mx-auto rounded-lg bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:bg-(--colorDark)"
     >
       {project.title}
     </h2>

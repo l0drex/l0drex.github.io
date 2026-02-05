@@ -19,13 +19,13 @@ let { title, background, backgroundDark, color, colorDark } = Astro.props;
   backgroundDark={backgroundDark}
   colorDark={colorDark}
 >
-  <div class="absolute top-0 left-0 -z-40 h-screen w-screen fixed">
+  <div class="absolute fixed top-0 left-0 -z-40 h-screen w-screen">
     <slot name="background" />
   </div>
-  <main class="flex flex-col items-center mt-14 flex-grow justify-center">
+  <main class="mt-14 flex flex-grow flex-col items-center justify-center">
     <slot />
   </main>
-  <footer class="flex justify-center m-2">
+  <footer class="m-2 flex justify-center">
     <a
       href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
       >Privacy Notice</a

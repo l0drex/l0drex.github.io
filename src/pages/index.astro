@@ -16,13 +16,13 @@ import Section from "@components/Section.astro";
 >
   <div
     slot="background"
-    class="w-full h-full bg-radial from-white to-gray-200 dark:from-gray-800 dark:to-gray-950"
+    class="h-full w-full bg-radial from-white to-gray-200 dark:from-gray-800 dark:to-gray-950"
   >
   </div>
 
-  <h1 class="mt-8 text-center font-extrabold text-4xl mb-15 sm:text-5xl">
+  <h1 class="mt-8 mb-15 text-center text-4xl font-extrabold sm:text-5xl">
     Who is <span
-      class="bg-linear-to-r bg-clip-text text-transparent to-indigo-400 from-cyan-400"
+      class="bg-linear-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent"
       >Lorenz</span
     >?
   </h1>
@@ -77,7 +77,7 @@ import Section from "@components/Section.astro";
       to share solutions whenever a problem becomes (surprisingly) complicated.
     </p>
     <ul
-      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+      class="mt-2 flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
     >
       <Button href="/tech" icon="mdi:code" label="Tech Blog" />
     </ul>
@@ -91,7 +91,7 @@ import Section from "@components/Section.astro";
     <p>If I find the time, I also post some photos in the fediverse.</p>
 
     <ul
-      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row mt-2"
+      class="mt-2 flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
     >
       <Button
         href="https://l0drex.github.io/travel"
@@ -107,14 +107,14 @@ import Section from "@components/Section.astro";
   </Section>
 
   <Intro title="Get in touch!">
-    <p class="max-w-lg mb-4">
+    <p class="mb-4 max-w-lg">
       If you want to contact me, send me an email! I am not really active on
       linked in, but you can still find me there. Also, you can take a look at
       my GitHub profile if you like.
     </p>
 
     <ul
-      class="flex list-none sm:gap-4 justify-center items-center flex-col sm:flex-row"
+      class="flex list-none flex-col items-center justify-center sm:flex-row sm:gap-4"
     >
       <Button
         href="mailto:hoffmann_lorenz@proton.me"
