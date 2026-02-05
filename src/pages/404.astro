@@ -12,11 +12,19 @@ import Button from "@components/Button.astro";
   colorDark="#fecaca"
 >
   <main
-    class="flex flex-col justify-center w-full items-center align-middle h-screen"
+    class="flex h-screen w-full flex-col items-center justify-center align-middle"
   >
-    <Intro title="Page not found">
-      Sorry, we couldn't find the page you were looking for. <br />
-      If a link from this page let you here, please report it.
+    <h1
+      class="text-8xl font-black text-red-500 text-shadow-lg text-shadow-red-500"
+    >
+      You are lost.
+    </h1>
+    <Intro title="">
+      Your journey guided you beyond the content of the website. Should you have
+      reached this site using a link from a website at
+      <a href="https://l0drex.github.io" class="underline">l0drex.github.io</a>,
+      please report this issue using the provided button, including where you
+      found that link and where it led you.
     </Intro>
 
     <Button href="/" label="Return Home" icon="mdi:home" />
