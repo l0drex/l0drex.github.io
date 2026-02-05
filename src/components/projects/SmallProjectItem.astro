@@ -17,9 +17,19 @@ const lang = project.languages?.at(0) ?? "";
 ---
 
 <li
-  class="shrink-0 w-52 h-50 rounded-xl py-1 px-1 mb-4
-bg-white dark:bg-gray-700 shadow-md select-none"
+  class="relative mb-4 h-50 w-52 shrink-0 rounded-xl px-1 py-1 shadow-md select-none"
 >
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute inset-0 size-full rounded-xl bg-white object-cover dark:bg-gray-700"
+    >
+    </div>
+    <div
+      class="absolute inset-0 size-full rounded-xl bg-linear-to-t from-(--color)/20 from-10% to-transparent to-60% object-cover dark:from-(--colorDark)/40"
+    >
+    </div>
+  </div>
+
   <a
     href={href}
     class="flex flex-col h-full hover:no-underline justify-between"
