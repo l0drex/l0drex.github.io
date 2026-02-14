@@ -4,7 +4,8 @@ date: 2023-07-03
 project: "work/future-mobility"
 ---
 
-I naively thought that simulating a car is quite simple: define a curve, make it follow that curve, and rotate it a bit.
+I naively thought that simulating a car was quite simple: define a curve, make it follow that curve, and rotate it a
+bit.
 Turns out, it's a bit more complex.
 
 # Rotation
@@ -25,7 +26,8 @@ Now we need to figure out by what angle the wheel rolled.
 
 We can calculate the distance by which the car moved by subtracting the current position from the previous position.
 This distance can be mapped on the circumference of the wheel.
-Now we can calculate the angle between start and end point of the wheel, and add that to the wheels current orientation.
+Now we can calculate the angle between the start and end point of the wheel, and add that to the wheels' current
+orientation.
 
 The update loop would look something like this:
 
@@ -41,22 +43,22 @@ private void Update()
 }
 ```
 
-This works, until the car moves backwards. Or until you are in a curve.
+This works until the car moves backwards. Or until you are in a curve.
 
 # Wheels turn in curves
 
 Yes, we also need to account for that.
-My first implementation calculated the of the vehicle like that:
+My first implementation calculated the rotation of the wheel like that:
 
 ```c#
 var wheelRotation = Mathf.Atan2(positionDelta.x, positionDelta.z) * 180f / Mathf.PI;
 ```
 
-This had some weird behaviour, so I limited the angle to values between `90` and `-90` degrees and
+This had some weird behavior, so I limited the angle to values between `90` and `-90` degrees and
 only changed the angle when the car moved. What was also annoying is that by rolling the wheel as explained previously,
 we also rotate the up-axis of the wheel.
 
-Then some colleague told my about a nice function provided by Unity that does exactly what I need:
+Then some colleague told me about a nice function provided by Unity that does exactly what I need:
 
 ```c#
 angle.SetLookRotation(position, Vector3.up)
