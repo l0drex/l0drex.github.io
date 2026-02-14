@@ -2,6 +2,7 @@
 import { dateFormatter } from "../utils/general";
 import TypeIcon from "@components/TypeIcon.astro";
 import Intro from "../components/Intro.astro";
+import { capitalizeFirstLetter } from "@utils/general.ts";
 
 const { frontmatter } = Astro.props;
 
@@ -9,9 +10,9 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 ---
 
 <Intro title={frontmatter.title}>
-  <span class="text-center text-2xl sm:text-3xl inline-flex gap-2">
+  <span class="inline-flex gap-2 text-center text-2xl sm:text-3xl">
     <TypeIcon type={frontmatter.type} />
-    {frontmatter.type}
+    {capitalizeFirstLetter(frontmatter.type)}
     {frontmatter.type && date && "·"}
     <span>{date}</span>
   </span>
@@ -20,7 +21,7 @@ const date = dateFormatter(frontmatter.date ?? new Date());
 <slot name="details" />
 
 <article
-  class="mx-auto max-w-3xl prose dark:prose-invert prose-img:rounded-lg prose-img:shadow-lg prose-img:mx-auto prose-li:marker:text-gray-500"
+  class="prose dark:prose-invert prose-img:rounded-lg prose-img:shadow-lg prose-img:mx-auto prose-li:marker:text-gray-500 dark:bg-unset mx-auto max-w-3xl rounded-lg bg-white/75 dark:bg-transparent"
 >
   <slot />
 </article>

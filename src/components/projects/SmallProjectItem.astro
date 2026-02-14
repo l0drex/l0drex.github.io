@@ -16,7 +16,9 @@ const colorDark: string = project.colorDark ?? "oklch(35.9% 0.144 278.697)";
 const lang = project.languages?.at(0) ?? "";
 ---
 
-<li class="relative mb-4 h-50 w-52 shrink-0 rounded-xl shadow-md select-none">
+<li
+  class="relative mb-4 h-50 w-52 shrink-0 rounded-xl border border-gray-300 shadow-md select-none dark:border-gray-600"
+>
   <div class="absolute inset-0 -z-10">
     <div
       class="absolute inset-0 size-full rounded-xl bg-white object-cover dark:bg-gray-700"
@@ -38,7 +40,7 @@ const lang = project.languages?.at(0) ?? "";
       {project.description}
     </p>
     <h2
-      class="relative top-4 mx-auto rounded-lg bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:bg-(--colorDark)"
+      class="relative top-4 mx-auto rounded-lg border border-gray-300 bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
     >
       {project.title}
     </h2>
