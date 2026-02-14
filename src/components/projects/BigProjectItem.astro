@@ -2,7 +2,7 @@
 import { dateFormatter } from "@utils/general";
 import type { CollectionEntry } from "astro:content";
 import LanguageTag from "./LanguageTag.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   project: CollectionEntry<"projects">["data"];
