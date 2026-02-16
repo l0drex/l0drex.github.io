@@ -14,7 +14,6 @@
   "dependencies": {
     "@astrojs/check": "0.9.6",
     "@astrojs/ts-plugin": "1.10.6",
-    "@astrojs/vue": "5.1.4",
     "@iconify-json/mdi": "^1.2.3",
     "@octokit/types": "^16.0.0",
     "@tailwindcss/typography": "^0.5.19",
@@ -25,8 +24,7 @@
     "octokit": "^5.0.5",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18",
-    "vite": "^6.4.1",
-    "vue": "^3.5.28"
+    "vite": "^6.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
