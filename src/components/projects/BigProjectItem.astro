@@ -3,6 +3,7 @@ import { dateFormatter } from "@utils/general";
 import type { CollectionEntry } from "astro:content";
 import LanguageTag from "./LanguageTag.astro";
 import { Image } from "astro:assets";
+import Card from "@components/Card.astro";
 
 interface Props {
   project: CollectionEntry<"projects">["data"];
@@ -17,39 +18,38 @@ const colorDark: string = project.colorDark ?? "oklch(37.3% 0.034 259.733)";
 const lang = project.languages?.at(0) ?? "";
 ---
 
-<li
-  class="relative flex h-48 w-80 shrink-0 overflow-hidden rounded-2xl border border-gray-300 bg-(--color) shadow-lg select-none dark:border-gray-600 dark:bg-(--colorDark)"
->
-  {
-    project.image && (
-      <div class="absolute inset-0 z-0">
+<li class="flex h-48 w-80 shrink-0">
+  <Card>
+    {
+      project.image && (
         <Image
+          slot="background"
           src={project.image}
           alt={project.title}
           width={640}
           height={384}
           class="size-full object-cover"
         />
-      </div>
-    )
-  }
+      )
+    }
 
-  <a
-    href={href}
-    class:list={[
-      "relative flex size-full flex-col justify-between bg-(--color)/60 p-4 opacity-100 backdrop-blur-sm dark:bg-(--colorDark)/70",
-      project.image ? "transition-opacity duration-250 hover:opacity-50" : "",
-    ]}
-  >
-    <h2 class="mb-1 text-2xl font-black">{project.title}</h2>
-    <p class="grow">
-      {project.description}
-    </p>
-    <div class="flex justify-between text-gray-500 dark:text-gray-300">
-      <LanguageTag lang={lang} />
-      <div class="m-0">{dateFormatter(project.date, true)}</div>
-    </div>
-  </a>
+    <a
+      href={href}
+      class:list={[
+        "flex size-full flex-col justify-between bg-(--color)/60 p-3 opacity-100 backdrop-blur-sm dark:bg-(--colorDark)/70",
+        project.image ? "transition-opacity duration-250 hover:opacity-50" : "",
+      ]}
+    >
+      <h2 class="mb-1 text-2xl font-black">{project.title}</h2>
+      <p class="grow">
+        {project.description}
+      </p>
+      <div class="flex justify-between text-gray-500 dark:text-gray-300">
+        <LanguageTag lang={lang} />
+        <div class="m-0">{dateFormatter(project.date, true)}</div>
+      </div>
+    </a>
+  </Card>
 </li>
 
 <style define:vars={{ color, colorDark }}></style>
