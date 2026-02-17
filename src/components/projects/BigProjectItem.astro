@@ -26,9 +26,10 @@ const lang = project.languages?.at(0) ?? "";
           slot="background"
           src={project.image}
           alt={project.title}
-          width={640}
-          height={384}
-          class="size-full object-cover"
+          width={320}
+          height={192}
+          loading="lazy"
+          layout="full-width"
         />
       )
     }
