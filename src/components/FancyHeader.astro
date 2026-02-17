@@ -1,0 +1,21 @@
+---
+
+---
+
+<div class="mt-8 mb-15 perspective-dramatic">
+  <h1 class="text-center text-4xl font-extrabold sm:text-5xl">
+    <slot />
+  </h1>
+  <div
+    class="rotate-x-85 text-center text-4xl font-extrabold text-black opacity-30 blur-sm select-none sm:text-5xl dark:invisible"
+    aria-hidden="true"
+  >
+    <slot />
+  </div>
+  <div
+    class="invisible absolute top-0 text-center text-4xl font-extrabold text-white blur-sm select-none sm:text-5xl dark:visible"
+    aria-hidden="true"
+  >
+    <slot />
+  </div>
+</div>

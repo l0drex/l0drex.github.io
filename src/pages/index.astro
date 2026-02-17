@@ -6,6 +6,7 @@ import { ProjectType } from "@utils/projects.ts";
 import ProjectSection from "@components/projects/ProjectSection.astro";
 import Section from "@components/Section.astro";
 import Text from "@components/Text.astro";
+import FancyHeader from "@components/FancyHeader.astro";
 ---
 
 <Layout
@@ -21,12 +22,12 @@ import Text from "@components/Text.astro";
   >
   </div>
 
-  <h1 class="mt-8 mb-15 text-center text-4xl font-extrabold sm:text-5xl">
+  <FancyHeader>
     Who is <span
       class="bg-linear-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent"
       >Lorenz</span
     >?
-  </h1>
+  </FancyHeader>
 
   <ProjectSection title="…a student" type={ProjectType.UNI}>
     <Text>
