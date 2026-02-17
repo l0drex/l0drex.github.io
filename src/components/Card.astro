@@ -8,11 +8,14 @@
       class="relative mb-4 size-full overflow-hidden rounded-xl border border-gray-300 shadow-md select-none dark:border-gray-600"
     >
       <div class="absolute inset-0 -z-10 size-full">
-        <div class="light absolute size-full bg-white opacity-0"></div>
         <slot name="background" />
       </div>
 
       <slot />
+
+      <div class="pointer-events-none absolute inset-0 size-full">
+        <div class="light absolute size-full bg-white opacity-0"></div>
+      </div>
     </div>
     <slot name="outside" />
   </div>
@@ -42,17 +45,20 @@
         continue;
       }
 
+      // range 0…1
       const relX = (event.clientX - rect.left) / rect.width;
       const relY = (event.clientY - rect.top) / rect.height;
+      // range -1…1
       const centerX = (relX - 0.5) * 2;
       const centerY = (relY - 0.5) * 2;
       const roll = centerX * maxAngle;
       const tilt = -centerY * maxAngle;
 
-      const lightIntensity = 1 - relY;
+      const min = 0.5;
+      const lightIntensity = (Math.max(min, 1 - relY) - 0.5) * 2;
 
       c.style.transform = `rotateX(${tilt}deg) rotateY(${roll}deg)`;
-      light.style.opacity = `${lightIntensity * 80}%`;
+      light.style.opacity = `${lightIntensity * 40}%`;
     }
   }
 
