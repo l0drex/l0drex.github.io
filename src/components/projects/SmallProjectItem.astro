@@ -37,12 +37,17 @@ const lang = project.languages?.at(0) ?? "";
       <div class="h-3"></div>
     </a>
 
-    <h2
+    <a
       slot="outside"
-      class="relative bottom-13 mx-auto w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
+      href={href}
+      class="relative bottom-13 mx-auto block w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 select-none"
     >
-      {project.title}
-    </h2>
+      <h2
+        class="text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
+      >
+        {project.title}
+      </h2>
+    </a>
   </Card>
 </li>
 
