@@ -1,6 +1,6 @@
 ---
-import { dateFormatter } from "@utils/general";
 import type { CollectionEntry } from "astro:content";
+import { dateFormatter } from "@utils/general";
 import LanguageTag from "./LanguageTag.astro";
 import { Image } from "astro:assets";
 import Card from "@components/Card.astro";
@@ -12,40 +12,55 @@ interface Props {
 
 const { project, href } = Astro.props;
 
-const color: string = project.color ?? "white";
-const colorDark: string = project.colorDark ?? "oklch(37.3% 0.034 259.733)";
+const color: string = project.color ?? "oklch(82.8% 0.111 230.318)";
+const colorDark: string = project.colorDark ?? "oklch(35.9% 0.144 278.697)";
 
 const lang = project.languages?.at(0) ?? "";
 ---
 
-<li class="flex h-48 w-80 shrink-0">
+<li class="mb-2 h-48 w-80 shrink-0">
   <Card>
-    {
-      project.image && (
-        <Image
-          slot="background"
-          src={project.image}
-          alt={project.title}
-          width={320}
-          height={192}
-          loading="lazy"
-          layout="full-width"
-        />
-      )
-    }
+    <div slot="background" class="size-full">
+      <div class="absolute size-full bg-white dark:bg-gray-700"></div>
+      {
+        project.image && (
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={320}
+            height={192}
+            loading="lazy"
+            layout="full-width"
+            class="absolute blur-xs"
+          />
+        )
+      }
+      <div class="absolute size-full bg-white/75 dark:bg-gray-700"></div>
+      <div
+        class="absolute size-full bg-linear-to-t from-(--color)/30 from-10% to-transparent to-60% dark:from-(--colorDark)/40"
+      >
+      </div>
+    </div>
 
-    <a
-      href={href}
-      class="flex size-full flex-col justify-between bg-(--color)/60 p-3 backdrop-blur-sm dark:bg-(--colorDark)/70"
-    >
-      <h2 class="mb-1 text-2xl font-black">{project.title}</h2>
-      <p class="grow">
-        {project.description}
-      </p>
+    <a href={href} class="flex h-full flex-col justify-between gap-2 p-2">
       <div class="flex justify-between text-gray-500 dark:text-gray-300">
         <LanguageTag lang={lang} />
-        <div class="m-0">{dateFormatter(project.date, true)}</div>
+        <div>{dateFormatter(project.date, true)}</div>
       </div>
+      <p class="mx-1">
+        {project.description}
+      </p>
+      <div class="h-3"></div>
+    </a>
+
+    <a
+      slot="outside"
+      href={href}
+      class="relative bottom-13 mx-auto block w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 select-none dark:border-gray-600 dark:bg-(--colorDark)"
+    >
+      <h2 class="text-center text-lg font-extrabold whitespace-nowrap">
+        {project.title}
+      </h2>
     </a>
   </Card>
 </li>

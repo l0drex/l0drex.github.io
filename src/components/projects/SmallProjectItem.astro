@@ -40,11 +40,9 @@ const lang = project.languages?.at(0) ?? "";
     <a
       slot="outside"
       href={href}
-      class="relative bottom-13 mx-auto block w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 select-none"
+      class="relative bottom-13 mx-auto block w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 select-none dark:border-gray-600 dark:bg-(--colorDark)"
     >
-      <h2
-        class="text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
-      >
+      <h2 class="text-center text-lg font-extrabold whitespace-nowrap">
         {project.title}
       </h2>
     </a>
