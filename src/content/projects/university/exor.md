@@ -1,7 +1,7 @@
 ---
-title: Künstliche Intelligenz im OP-Saal der Zukunft
+title: OP-Saal der Zukunft
 type: university
-description: Interactive learning game for an exhibition about future technologies in the operating room
+description: Interactive exhibition piece about future technologies in the operating room
 date: 2026-02-03
 color: '#DDDD70'
 languages: ["C#"]

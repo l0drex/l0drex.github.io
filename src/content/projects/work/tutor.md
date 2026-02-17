@@ -1,7 +1,7 @@
 ---
-title: Tutor
+title: Foundations of VR
 date: 2025-10-01
-description: I worked as tutor for the lecture "Foundations of Virtual Reality".
+description: Tutorium for the lecture "Foundations of Virtual Reality".
 type: work
 languages: [ "C#", "typst" ]
 tools: [ "Unity" ]

@@ -1,7 +1,7 @@
 ---
 title: Retro Reboot
 type: university
-description: Exhibit that decodes punch stripes it in various ways
+description: Exhibit piece about programming punch stripes
 date: 2024-06-06
 color: '#ffffa2'
 languages: [ "Python" ]
