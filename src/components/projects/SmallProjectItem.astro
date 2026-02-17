@@ -19,12 +19,14 @@ const lang = project.languages?.at(0) ?? "";
 
 <li class="mb-2 h-48 w-52 shrink">
   <Card>
-    <div slot="background" class="size-full bg-white dark:bg-gray-700"></div>
+    <div slot="background" class="size-full bg-white dark:bg-gray-700">
+      <div
+        class="size-full bg-linear-to-t from-(--color)/20 from-10% to-transparent to-60% dark:from-(--colorDark)/40"
+      >
+      </div>
+    </div>
 
-    <a
-      href={href}
-      class="flex h-full flex-col justify-between gap-2 bg-linear-to-t from-(--color)/20 from-10% to-transparent to-60% p-2 hover:from-(--color)/40 hover:to-(--color)/10 hover:to-80% dark:from-(--colorDark)/40 hover:dark:from-(--colorDark)/60 hover:dark:to-(--colorDark)/20"
-    >
+    <a href={href} class="flex h-full flex-col justify-between gap-2 p-2">
       <div class="flex justify-between text-gray-500 dark:text-gray-300">
         <LanguageTag lang={lang} />
         <div>{dateFormatter(project.date, true)}</div>
@@ -34,13 +36,14 @@ const lang = project.languages?.at(0) ?? "";
       </p>
       <div class="h-3"></div>
     </a>
-  </Card>
 
-  <h2
-    class="relative bottom-13 mx-auto w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
-  >
-    {project.title}
-  </h2>
+    <h2
+      slot="outside"
+      class="relative bottom-13 mx-auto w-min rounded-lg border border-gray-300 bg-(--color) px-4 py-2 text-center text-lg font-extrabold whitespace-nowrap dark:border-gray-600 dark:bg-(--colorDark)"
+    >
+      {project.title}
+    </h2>
+  </Card>
 </li>
 
 <style define:vars={{ color, colorDark }}></style>

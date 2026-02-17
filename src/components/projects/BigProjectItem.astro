@@ -35,10 +35,7 @@ const lang = project.languages?.at(0) ?? "";
 
     <a
       href={href}
-      class:list={[
-        "flex size-full flex-col justify-between bg-(--color)/60 p-3 opacity-100 backdrop-blur-sm dark:bg-(--colorDark)/70",
-        project.image ? "transition-opacity duration-250 hover:opacity-50" : "",
-      ]}
+      class="flex size-full flex-col justify-between bg-(--color)/60 p-3 backdrop-blur-sm dark:bg-(--colorDark)/70"
     >
       <h2 class="mb-1 text-2xl font-black">{project.title}</h2>
       <p class="grow">

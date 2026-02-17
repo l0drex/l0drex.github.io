@@ -2,12 +2,59 @@
 
 ---
 
-<div
-  class="relative mb-4 size-full overflow-hidden rounded-xl border border-gray-300 shadow-md select-none dark:border-gray-600"
->
-  <div class="absolute inset-0 -z-10 size-full">
-    <slot name="background" />
-  </div>
+<div class="size-full perspective-normal">
+  <div class="card size-full">
+    <div
+      class="relative mb-4 size-full overflow-hidden rounded-xl border border-gray-300 shadow-md select-none dark:border-gray-600"
+    >
+      <div class="absolute inset-0 -z-10 size-full">
+        <div class="light absolute size-full bg-white opacity-0"></div>
+        <slot name="background" />
+      </div>
 
-  <slot />
+      <slot />
+    </div>
+    <slot name="outside" />
+  </div>
 </div>
+
+<script>
+  const maxAngle = 5;
+  const cards = document.getElementsByClassName(
+    "card",
+  ) as HTMLCollectionOf<HTMLDivElement>;
+
+  function onMouseUpdate(event: MouseEvent) {
+    for (const c of cards) {
+      const light = c.querySelector(".light") as HTMLDivElement;
+      const lightRect = light.getBoundingClientRect();
+      // we take the container rect to avoid weird state at edge
+      const rect = (c.parentNode! as HTMLDivElement).getBoundingClientRect();
+
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      ) {
+        c.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        light.style.opacity = "0%";
+        continue;
+      }
+
+      const relX = (event.clientX - rect.left) / rect.width;
+      const relY = (event.clientY - rect.top) / rect.height;
+      const centerX = (relX - 0.5) * 2;
+      const centerY = (relY - 0.5) * 2;
+      const roll = centerX * maxAngle;
+      const tilt = -centerY * maxAngle;
+
+      const lightIntensity = 1 - relY;
+
+      c.style.transform = `rotateX(${tilt}deg) rotateY(${roll}deg)`;
+      light.style.opacity = `${lightIntensity * 80}%`;
+    }
+  }
+
+  window.addEventListener("mousemove", onMouseUpdate);
+</script>
