@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry, render } from "astro:content";
 import MarkdownPostLayout from "@layouts/BlogPost.astro";
 import Layout from "@layouts/ContentLayout.astro";
 import Button from "@components/Button.astro";
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   const posts: CollectionEntry<"projects">[] = await getCollection("projects");
 
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry }
   }));
 }
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout

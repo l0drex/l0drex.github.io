@@ -27,7 +27,7 @@ md:grid md:justify-items-center md:grid-cols-3 md:grid-flow-dense"
 >
   {
     projects.map((p) => (
-      <SmallProjectItem project={p.data} href={"/projects/" + p.slug} />
+      <SmallProjectItem project={p.data} href={"/projects/" + p.id} />
     ))
   }
 </ul>
