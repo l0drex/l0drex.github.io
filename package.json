@@ -12,27 +12,27 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.9",
-    "@astrojs/ts-plugin": "1.10.9",
+    "@astrojs/check": "0.9.10",
+    "@astrojs/ts-plugin": "1.10.11",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.1",
-    "astro": "7.0.3",
-    "astro-icon": "^1.1.5",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "7.3.1",
+    "astro-icon": "^1.2.0",
     "astro-robots-txt": "^1.0.0",
     "octokit": "^5.0.5",
-    "tailwindcss": "^4.3.1",
-    "vite": "^8.1.0"
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@octokit/types": "^16.0.0",
+    "@octokit/types": "^18.0.0",
     "@types/eslint__js": "^9.14.0",
-    "eslint": "^10.6.0",
-    "prettier": "^3.8.1",
+    "eslint": "^10.9.1",
+    "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0"
+    "typescript-eslint": "^8.69.0"
   }
 }
