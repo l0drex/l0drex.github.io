@@ -30,7 +30,6 @@
   function onMouseUpdate(event: MouseEvent) {
     for (const c of cards) {
       const light = c.querySelector(".light") as HTMLDivElement;
-      const lightRect = light.getBoundingClientRect();
       // we take the container rect to avoid weird state at edge
       const rect = (c.parentNode! as HTMLDivElement).getBoundingClientRect();
 
