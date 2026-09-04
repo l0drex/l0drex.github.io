@@ -27,7 +27,7 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
         <BlogEntry
           title={p.data.title}
           date={p.data.date}
-          href={"/tech/" + p.slug}
+          href={"/tech/" + p.id}
         />
       ))
     }
